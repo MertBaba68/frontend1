@@ -1,10 +1,10 @@
-
+import "/src/styles/Category.css"
 
 const Category = (data) => {
     console.log(data)
     return (
         <>
-            <div class="category-container">
+            <div className="category-container">
                 <img className="category-image" alt="Image of service" src={"placeholder-categories.png"}/>
                 <h2 className="category-title" >Agrarische Sensor</h2>
                 <p className="category-description" >Slimme agrarische sensor: meet bodemgegevens, bespaar water, verhoog opbrengst en optimaliseer

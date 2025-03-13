@@ -1,0 +1,11 @@
+@import "globals.css";
+
+.category-container {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 350px;
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}

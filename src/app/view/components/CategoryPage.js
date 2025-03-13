@@ -1,5 +1,6 @@
 import {getCategories} from "@/app/service/CategorieService";
-import Category from "@/app/view/components/Category";
+import Categories from "@/app/view/components/Categories";
+import "/src/styles/CategoryPage.css"
 
 
 const CategoryPage = async () => {
@@ -14,11 +15,7 @@ const CategoryPage = async () => {
 
     return (
         <div className="category-page-container">
-            <div className="category-page-grid-row" >
-                {categoryData.map(category => (
-                    <Category data={category} key={category.id} />
-                ))}
-            </div>
+            <Categories data={categoryData}/>
         </div>
     )
 }
