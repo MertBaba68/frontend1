@@ -1,7 +1,5 @@
 export const getCategoriesDummy = async () => {
-    return
-
-    [
+    return [
         {
             "id": "7a0e6b1b-92d4-4b56-9905-e8c6d57b2b5b",
             "name": "Product 1",
