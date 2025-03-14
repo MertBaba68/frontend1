@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
-    width: 80%;
+    width: 100%;
     gap: 1rem;
-    padding: 0;
+    padding: 0 50rem 0 50rem; /* I know, bad practice but its just for demonstration purposed right now */
 }
