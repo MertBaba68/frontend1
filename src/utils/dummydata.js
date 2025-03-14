@@ -2,7 +2,7 @@ export const getCategoriesDummy = async () => {
     return [
         {
             "id": "7a0e6b1b-92d4-4b56-9905-e8c6d57b2b5b",
-            "name": "Product 1",
+            "name": "Automotive",
             "image": "",
             "services": [
                 {
@@ -21,7 +21,7 @@ export const getCategoriesDummy = async () => {
         },
         {
             "id": "84663b12-86c3-4906-832d-22f3896a2c27",
-            "name": "Product 2",
+            "name": "Healthcare",
             "image": "",
             "services": [
                 {
@@ -40,7 +40,7 @@ export const getCategoriesDummy = async () => {
         },
         {
             "id": "09fcdab3-cd7b-469b-80a3-b5ef69875611",
-            "name": "Product 3",
+            "name": "Technology",
             "image": "",
             "services": [
                 {
@@ -53,7 +53,7 @@ export const getCategoriesDummy = async () => {
         },
         {
             "id": "a5dce5ab-8cfb-4c50-926f-ef8b587d71d2",
-            "name": "Product 4",
+            "name": "Finance",
             "image": "",
             "services": [
                 {
@@ -66,7 +66,7 @@ export const getCategoriesDummy = async () => {
         },
         {
             "id": "f3f2ab11-bf4e-4d38-a62f-957e03c101b0",
-            "name": "Product 5",
+            "name": "Education",
             "image": "",
             "services": [
                 {
@@ -79,7 +79,7 @@ export const getCategoriesDummy = async () => {
         },
         {
             "id": "4b1b98e0-5090-47ff-89cc-eac9f1c9eaf9",
-            "name": "Product 6",
+            "name": "Energy",
             "image": "",
             "services": [
                 {
@@ -92,4 +92,3 @@ export const getCategoriesDummy = async () => {
         }
     ]
 }
-

@@ -14,7 +14,7 @@ const CategoryPage = async () => {
     //             </div>
 
     return (
-        <div className="category-page-container">
+        <div className="category-page-container" >
             <Categories data={categoryData}/>
         </div>
     )
