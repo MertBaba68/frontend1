@@ -1,10 +1,13 @@
 import "/src/styles/ActionBar.css"
 
-const ActionBar = ({ data }) => {
+const ActionBar = ({ servicesCategoryData }) => {
+
+    console.log(servicesCategoryData)
+
     return (
         <>
             <div className="actionbar-container">
-                <h1 className="actionbar-heading">Agriculture</h1>
+                <h1 className="actionbar-heading">{servicesCategoryData.name}</h1>
                 <p className="actionbar-description">Zoek hier naar uw toekomstige dienst</p>
                 <input
                     className="actionbar-input"

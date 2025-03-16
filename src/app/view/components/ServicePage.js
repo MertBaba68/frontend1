@@ -14,7 +14,7 @@ const ServicePage = ({ categoryData }) => {
 
             </div>
             <div className="service-page-actionbar-container">
-                <ActionBar />
+                <ActionBar servicesCategoryData={categoryData} />
             </div>
 
             <div className="service-page-services-container">
