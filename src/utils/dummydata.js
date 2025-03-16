@@ -50,14 +50,38 @@ export const getCategoriesDummy = async () => {
             "services": [
                 {
                     "id": "c9b19f6f-d681-4f7e-b424-7fe48fd1e741",
-                    "name": "Service 1",
-                    "description": "Beschrijving van service 1",
+                    "name": "Telemedicine Platforms",
+                    "description": "Online consultatieplatforms voor patiënten om remote medische hulp te ontvangen.",
                     "image": ""
                 },
                 {
                     "id": "8999a33b-79e3-4e2c-bfc9-cfa7e0840e1e",
-                    "name": "Service 3",
-                    "description": "Beschrijving van service 3",
+                    "name": "AI Diagnostics Assistant",
+                    "description": "Artificiële intelligentie die medische beelden analyseert voor snellere diagnose.",
+                    "image": ""
+                },
+                {
+                    "id": "d8f3a5e0-5f6c-4c49-9c0a-47c30a2f1102",
+                    "name": "Wearable Health Monitors",
+                    "description": "Draagbare apparaten die vitale functies zoals hartslag en bloeddruk continu monitoren.",
+                    "image": ""
+                },
+                {
+                    "id": "e6c3a5b7-9f54-4e0a-8f89-5d26abcf73a3",
+                    "name": "Personalized Medicine",
+                    "description": "Behandelingen op maat gebaseerd op genetische gegevens van de patiënt.",
+                    "image": ""
+                },
+                {
+                    "id": "f4b7c2a8-6f82-49cc-8e94-94b3d26f5d9f",
+                    "name": "Virtual Reality Therapy",
+                    "description": "VR-toepassingen voor pijnbestrijding en behandeling van fobieën.",
+                    "image": ""
+                },
+                {
+                    "id": "a1b2c3d4-1234-5678-9123-4567c3d4a1b2",
+                    "name": "Electronic Health Records",
+                    "description": "Digitale patiëntendossiers voor betere gegevensuitwisseling tussen zorgverleners.",
                     "image": ""
                 }
             ]
@@ -69,8 +93,38 @@ export const getCategoriesDummy = async () => {
             "services": [
                 {
                     "id": "ab890dba-c42d-4e29-a4b2-b4187d6d85e7",
-                    "name": "Service 4",
-                    "description": "Beschrijving van service 4",
+                    "name": "Cybersecurity Solutions",
+                    "description": "Geavanceerde beveiligingssystemen tegen cyberdreigingen en datalekken.",
+                    "image": ""
+                },
+                {
+                    "id": "c5d4a3b6-21a1-45e8-9f1a-6b2d1b4c4f3d",
+                    "name": "Cloud Computing Services",
+                    "description": "Schalbare cloudoplossingen voor dataopslag en verwerking.",
+                    "image": ""
+                },
+                {
+                    "id": "e7f8a9b5-45b3-4c5c-8e1d-27e6f0c4a5b6",
+                    "name": "Internet of Things Platforms",
+                    "description": "IoT-platforms voor verbonden apparaten in industriële en consumentenomgevingen.",
+                    "image": ""
+                },
+                {
+                    "id": "f2d3c4b5-1234-5678-9123-4567d3c4a1b2",
+                    "name": "Artificial Intelligence Tools",
+                    "description": "AI-gedreven tools voor automatisering en gegevensanalyse.",
+                    "image": ""
+                },
+                {
+                    "id": "g4h5i6j7-8901-2345-6789-0123h4i5j6",
+                    "name": "Blockchain Development",
+                    "description": "Beveiligde blockchain-systemen voor transacties en data-integriteit.",
+                    "image": ""
+                },
+                {
+                    "id": "k1l2m3n4-5678-9123-4567-8901m3n4l2k1",
+                    "name": "DevOps Automation",
+                    "description": "Automatisering van softwareontwikkeling en implementatieprocessen.",
                     "image": ""
                 }
             ]
@@ -82,8 +136,38 @@ export const getCategoriesDummy = async () => {
             "services": [
                 {
                     "id": "7b547935-f4b7-45e4-a256-6c50fd55be47",
-                    "name": "Service 5",
-                    "description": "Beschrijving van service 5",
+                    "name": "Mobile Payment Solutions",
+                    "description": "Mobiele betaalplatforms voor contactloze transacties.",
+                    "image": ""
+                },
+                {
+                    "id": "c6d5e4f3-1234-5678-9123-4567e4f3d1c2",
+                    "name": "Blockchain Banking",
+                    "description": "Decentrale financiële systemen gebaseerd op blockchain-technologie.",
+                    "image": ""
+                },
+                {
+                    "id": "e8f9a7b5-45b3-4c5c-8e1d-27e6f0c4a5b6",
+                    "name": "Robo-Advisory Services",
+                    "description": "Automatische beleggingsadviesdiensten gebaseerd op AI.",
+                    "image": ""
+                },
+                {
+                    "id": "f2d3c4b5-1234-5678-9123-4567d3c4a1b2",
+                    "name": "Cryptocurrency Trading",
+                    "description": "Platformen voor het kopen en verkopen van cryptocurrencies.",
+                    "image": ""
+                },
+                {
+                    "id": "g4h5i6j7-8901-2345-6789-0123h4i5j6",
+                    "name": "Digital Wallets",
+                    "description": "Elektronische portemonnees voor veilige opslag van betaalgegevens.",
+                    "image": ""
+                },
+                {
+                    "id": "k1l2m3n4-5678-9123-4567-8901m3n4l2k1",
+                    "name": "Financial Analytics",
+                    "description": "Geavanceerde financiële analyse tools voor bedrijfsprestaties.",
                     "image": ""
                 }
             ]
@@ -95,8 +179,38 @@ export const getCategoriesDummy = async () => {
             "services": [
                 {
                     "id": "d70de0ed-41eb-47e9-b88e-bb3747a573ee",
-                    "name": "Service 2",
-                    "description": "Beschrijving van service 2",
+                    "name": "Online Learning Platforms",
+                    "description": "Interactieve leerplatforms voor afstandsonderwijs en online cursussen.",
+                    "image": ""
+                },
+                {
+                    "id": "e5f4a3b2-1234-5678-9123-4567a3f4b1e2",
+                    "name": "AI Tutoring Systems",
+                    "description": "Persoonlijke leerassistenten die studenten real-time helpen.",
+                    "image": ""
+                },
+                {
+                    "id": "f7h8i6j5-8901-2345-6789-0123h6i5j7f",
+                    "name": "Virtual Reality Classrooms",
+                    "description": "VR-toepassingen voor immersieve leerervaringen.",
+                    "image": ""
+                },
+                {
+                    "id": "g6h7i8j9-4567-8901-2345-6789h7i6j5g",
+                    "name": "Educational Apps",
+                    "description": "Mobiele applicaties voor kinderen om basisvaardigheden te leren.",
+                    "image": ""
+                },
+                {
+                    "id": "k1l2m3n4-5678-9123-4567-8901m3n4l2k1",
+                    "name": "Skill Development Courses",
+                    "description": "Specialisatiecursussen voor professionele vaardigheden.",
+                    "image": ""
+                },
+                {
+                    "id": "l2m3n4o5-6789-0123-4567-8901m4o3n2l1",
+                    "name": "Adaptive Learning",
+                    "description": "Leersystemen die zich aanpassen aan de capaciteiten van de leerling.",
                     "image": ""
                 }
             ]
@@ -108,8 +222,38 @@ export const getCategoriesDummy = async () => {
             "services": [
                 {
                     "id": "6d7bdb9a-d7e5-4f9d-b869-fc45c8422f38",
-                    "name": "Service 3",
-                    "description": "Beschrijving van service 3",
+                    "name": "Solar Panel Systems",
+                    "description": "Zonnepanelen voor duurzame energieopwekking.",
+                    "image": ""
+                },
+                {
+                    "id": "e5f4a3b2-1234-5678-9123-4567a3f4b1e2",
+                    "name": "Wind Energy Solutions",
+                    "description": "Windturbines voor grootschalige energieopwekking.",
+                    "image": ""
+                },
+                {
+                    "id": "f7h8i6j5-8901-2345-6789-0123h6i5j7f",
+                    "name": "Smart Grids",
+                    "description": "Intelligente energienetwerken voor efficiënt energiegebruik.",
+                    "image": ""
+                },
+                {
+                    "id": "g6h7i8j9-4567-8901-2345-6789h7i6j5g",
+                    "name": "Energy Storage Systems",
+                    "description": "Oplossingen voor opslag van hernieuwbare energie.",
+                    "image": ""
+                },
+                {
+                    "id": "k1l2m3n4-5678-9123-4567-8901m3n4l2k1",
+                    "name": "Green Hydrogen Production",
+                    "description": "Productie van groene waterstof als schone brandstof.",
+                    "image": ""
+                },
+                {
+                    "id": "l2m3n4o5-6789-0123-4567-8901m4o3n2l1",
+                    "name": "Energy Efficiency Consulting",
+                    "description": "Adviesdiensten voor vermindering van energieverbruik.",
                     "image": ""
                 }
             ]

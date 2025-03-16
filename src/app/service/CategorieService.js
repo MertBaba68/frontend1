@@ -8,6 +8,6 @@ export const getCategories = async () => {
 
 export const getServicesFromCategorie = async () => {
     const dummy = await getCategoriesDummy()
-    return dummy[0]
+    return dummy[2]
 
 }
