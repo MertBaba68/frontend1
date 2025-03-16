@@ -8,6 +8,7 @@
     background-color: var(--card-background);
     padding: 20px;
     margin: 0 auto;
+    border-radius: 0.5rem;
 }
 
 .actionbar-heading {
