@@ -1,7 +1,9 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-
+  --foreground: #212529;
+  --font-baloo: 'Baloo Chettan 2', cursive;
+  --font-hanken: 'Hanken Grotesk', sans-serif;
+  --font-mona: 'Mona Sans', monospace;
   --card-background: #f5f5f5
 }
 
@@ -11,15 +13,19 @@ body {
   height: 100%;
   overflow-x: hidden;
   font-size: 14px;
-  margin: 0;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-hanken), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
 }
 
 * {

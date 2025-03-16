@@ -8,4 +8,5 @@
     background-color: var(--card-background);
     padding: 1.5rem;
     border-radius: 0.5rem;
+    align-items: center;
 }

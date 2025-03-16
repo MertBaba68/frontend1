@@ -16,6 +16,18 @@ export const getCategoriesDummy = async () => {
                     "name": "Service 2",
                     "description": "Beschrijving van service 2",
                     "image": ""
+                },
+                {
+                    "id": "ad0b7d97-c99e-4e6b-bd1a-53a440d7e9ff",
+                    "name": "Service 1",
+                    "description": "Beschrijving van service 1",
+                    "image": ""
+                },
+                {
+                    "id": "fb4e63bb-b290-4e62-8324-ef5fa6ad1f63",
+                    "name": "Service 2",
+                    "description": "Beschrijving van service 2",
+                    "image": ""
                 }
             ]
         },
