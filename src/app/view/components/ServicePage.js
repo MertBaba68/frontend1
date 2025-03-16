@@ -1,10 +1,12 @@
 import Services from "@/app/view/components/Services";
 import ActionBar from "@/app/view/components/ActionBar";
-import {getServicesFromCategory} from "@/app/service/CategorieService";
 import "/src/styles/ServicePage.css"
 
-const ServicePage = async ({ category }) => {
-    const servicesFromCategory = await getServicesFromCategory(category);
+const ServicePage = ({ category }) => {
+
+    if (!category) {
+        return <p>Loading category data...</p>; // Wacht tot de data beschikbaar is
+    }
 
     return (
         <div className="service-page-container">
@@ -16,7 +18,7 @@ const ServicePage = async ({ category }) => {
             </div>
 
             <div className="service-page-services-container">
-                <Services data={servicesFromCategory} />
+                <Services data={category} />
             </div>
             <div className="service-page-contact-container">
                 <p>Contact soon...</p>

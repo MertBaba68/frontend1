@@ -1,11 +1,11 @@
 "use client";
 
-import {useEffect, useState} from "react";
-import {getServicesFromCategory} from "@/app/service/CategorieService";
+import { useEffect, useState } from "react";
+import { getServicesFromCategory } from "@/app/service/CategorieService";
 import ServicePage from "@/app/view/components/ServicePage";
 
 const ServicePageController = ({ category }) => {
-    const[selectedCategory, setSelectedCategory] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState(null);
 
     useEffect(() => {
         const fetchSelectedCategory = async () => {
@@ -20,9 +20,7 @@ const ServicePageController = ({ category }) => {
         fetchSelectedCategory();
     }, [category]);
 
-    return(
-        <ServicePage category={selectedCategory}/>
-    )
-}
+    return <ServicePage category={selectedCategory} />;
+};
 
 export default ServicePageController;
