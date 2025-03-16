@@ -5,3 +5,10 @@ export const getCategories = async () => {
     // if (!response.ok) throw new Error("Failed to fetch categories.")
     // return response.json()
 }
+
+export const getServicesFromCategorie = async () => {
+    const dummy = await getCategoriesDummy()
+
+    return dummy[0]
+
+}

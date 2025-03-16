@@ -1,11 +1,11 @@
-import {getCategories} from "@/app/service/CategorieService";
+import {getCategories, getServicesFromCategorie} from "@/app/service/CategorieService";
 import Services from "@/app/view/components/Services";
 import "/src/styles/ServicePage.css"
 
 
 const ServicePage = async () => {
 
-    const categoryData = await getCategories()
+    const servicesFromCategory = await getServicesFromCategorie()
 
     //         <div className="answers-container">
     //                 {answers.map(answer => (
@@ -15,7 +15,7 @@ const ServicePage = async () => {
 
     return (
         <div className="service-page-container" >
-            <Services data={categoryData}/>
+            <Services data={servicesFromCategory}/>
         </div>
     )
 }
