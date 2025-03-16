@@ -1,7 +1,8 @@
-import ServicePage from "@/app/view/components/ServicePage";
+import ServicePageController from "@/app/controller/ServicePageController";
+
 
 export default function Home() {
   return (
-      <ServicePage category={"Agriculture"} />
+      <ServicePageController category={"Agriculture"}/>
   );
 }
