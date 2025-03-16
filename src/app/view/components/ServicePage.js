@@ -1,9 +1,9 @@
 import {getCategories} from "@/app/service/CategorieService";
-import Categories from "@/app/view/components/Categories";
-import "/src/styles/CategoryPage.css"
+import Services from "@/app/view/components/Services";
+import "/src/styles/ServicePage.css"
 
 
-const CategoryPage = async () => {
+const ServicePage = async () => {
 
     const categoryData = await getCategories()
 
@@ -14,10 +14,10 @@ const CategoryPage = async () => {
     //             </div>
 
     return (
-        <div className="category-page-container" >
-            <Categories data={categoryData}/>
+        <div className="service-page-container" >
+            <Services data={categoryData}/>
         </div>
     )
 }
 
-export default CategoryPage
+export default ServicePage
