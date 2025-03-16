@@ -9,7 +9,7 @@ const Service = ({ serviceData }) => {
     return (
         <>
             <div className="service-container">
-                <img className="service-image" alt="Image of service" src={"placeholder-categories.png"}/>
+                <img className="service-image" alt="Image of service" src={"/placeholder-categories.png"}/>
                 <h2 className="service-title" >{serviceData.name}</h2>
                 <p className="service-description" >{serviceData.description}</p>
             </div>
