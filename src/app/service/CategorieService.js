@@ -1,13 +1,8 @@
 import {getCategoriesDummy} from "@/utils/dummydata";
 
-export const getCategories = async () => {
-    return await getCategoriesDummy()
-    // if (!response.ok) throw new Error("Failed to fetch categories.")
-    // return response.json()
-}
-
-export const getServicesFromCategorie = async () => {
+export const getServicesFromCategory = async (categoryName) => {
     const dummy = await getCategoriesDummy()
-    return dummy[2]
-
+    return dummy.find(category => {
+        if (category.name === categoryName) return category
+    })
 }

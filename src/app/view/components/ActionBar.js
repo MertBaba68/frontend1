@@ -1,6 +1,6 @@
 import "/src/styles/ActionBar.css"
 
-const ActionBar = (category) => {
+const ActionBar = ({ data }) => {
     return (
         <>
             <div className="actionbar-container">
