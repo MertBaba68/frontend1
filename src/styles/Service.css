@@ -3,10 +3,40 @@
 .service-container {
     display: flex;
     flex-direction: column;
-    width: 350px;
-    height: 350px;
+    min-height: 350px;
     background-color: var(--card-background);
     padding: 1.5rem;
     border-radius: 0.5rem;
     align-items: center;
+    width: 100%;
+    max-width: 250px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.service-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-container:active {
+    transform: translateY(0);
+}
+
+.service-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.service-title {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
+
+.service-description {
+    text-align: center;
+    padding: 0.5rem;
 }

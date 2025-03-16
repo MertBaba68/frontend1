@@ -18,8 +18,9 @@
     width: 100%;
 }
 
-.actionbar-container {
+.service-page-actionbar-container {
     grid-row: 2;
+    width: 100%;
 }
 
 .services-container {
@@ -27,10 +28,12 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Read about */
     gap: 20px;
+    width: 100%;
 }
 
 .contact-footer {
     grid-row: 4;
+    width: 100%;
 }
 
 .service-page-container > * { /* Read about */

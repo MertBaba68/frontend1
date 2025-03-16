@@ -11,7 +11,7 @@ const ServicePage = async () => {
             <div className="header-to-be-made" >
 
             </div>
-            <div className="actionbar-container" >
+            <div className="service-page-actionbar-container" >
                 <ActionBar />
             </div>
 
