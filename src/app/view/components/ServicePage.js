@@ -5,7 +5,7 @@ import "/src/styles/ServicePage.css"
 const ServicePage = ({ category }) => {
 
     if (!category) {
-        return <p>Loading category data...</p>; // Wacht tot de data beschikbaar is
+        return <p>Loading category data...</p>;
     }
 
     return (
