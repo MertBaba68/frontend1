@@ -12,7 +12,7 @@
     background-color: white;
 }
 
-.header-to-be-made {
+.service-page-header-to-be-made {
     grid-row: 1;
     height: 20px;
     width: 100%;
@@ -31,7 +31,7 @@
     width: 100%;
 }
 
-.contact-footer {
+.service-page-contact-footer {
     grid-row: 4;
     width: 100%;
 }

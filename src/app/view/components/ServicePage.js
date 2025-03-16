@@ -8,7 +8,7 @@ const ServicePage = async () => {
 
     return (
         <div className="service-page-container">
-            <div className="header-to-be-made" >
+            <div className="service-page-header-to-be-made" >
 
             </div>
             <div className="service-page-actionbar-container" >
@@ -18,7 +18,7 @@ const ServicePage = async () => {
             <div className="services-container">
                 <Services data={servicesFromCategory} />
             </div>
-            <div className="contact-container">
+            <div className="service-page-contact-container">
                 <p>Contact soon...</p>
             </div>
         </div>
