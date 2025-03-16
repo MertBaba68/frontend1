@@ -8,6 +8,9 @@ const ServicePage = async () => {
 
     return (
         <div className="service-page-container">
+            <div className="header-to-be-made" >
+
+            </div>
             <div className="actionbar-container" >
                 <ActionBar />
             </div>
