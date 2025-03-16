@@ -34,6 +34,8 @@
     font-weight: bold;
     font-size: 2rem;
     margin-top: 0.5rem;
+    line-height: 1.75rem;
+    text-align: left; /* Center of left */
 }
 
 .service-description {

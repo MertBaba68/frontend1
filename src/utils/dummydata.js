@@ -2,43 +2,43 @@ export const getCategoriesDummy = async () => {
     return [
         {
             "id": "7a0e6b1b-92d4-4b56-9905-e8c6d57b2b5b",
-            "name": "Automotive",
+            "name": "Agriculture",
             "image": "",
             "services": [
                 {
                     "id": "ad0b7d97-c99e-4e6b-bd1a-53a440d7e9ff",
-                    "name": "Service 1",
-                    "description": "Beschrijving van service 1",
+                    "name": "Precision Farming Systems",
+                    "description": "Gebruik GPS en sensoren om planten en oogsten te optimaliseren voor een hogere opbrengst.",
                     "image": ""
                 },
                 {
                     "id": "fb4e63bb-b290-4e62-8324-ef5fa6ad1f63",
-                    "name": "Service 2",
-                    "description": "Beschrijving van service 2",
+                    "name": "Smart Irrigation Management",
+                    "description": "Automatische irrigatiesystemen die watergebruik aanpassen aan bodemcondities.",
                     "image": ""
                 },
                 {
                     "id": "ad0b7d97-c99e-4e6b-bd1a-53a44057e9ff",
-                    "name": "Service 1",
-                    "description": "Beschrijving van service 1",
+                    "name": "Livestock Health Monitoring",
+                    "description": "Draagbare apparaten die de gezondheid van vee volgen en waarschuwen bij afwijkingen.",
                     "image": ""
                 },
                 {
                     "id": "fb4e63bb-b290-4e62-8324-ef5wa6ad1f63",
-                    "name": "Service 2",
-                    "description": "Beschrijving van service 2",
+                    "name": "Crop Yield Prediction",
+                    "description": "Gebruik AI en data-analyse om oogsten te voorspellen en strategieën aan te passen.",
                     "image": ""
                 },
                 {
-                    "id": "td0b7d97-c99e-4e6b-bd1a-53a44057e9ff",
-                    "name": "Service 1",
-                    "description": "Beschrijving van service 1",
+                    "id": "td0b7d97-c99e-4e62-bd1a-53a44057e9ff",
+                    "name": "Sustainable Pest Control",
+                    "description": "Biologische methoden om plagen te bestrijden zonder milieuschade.",
                     "image": ""
                 },
                 {
                     "id": "kb4e63bb-b290-4e62-8324-ef5wa6ad1f63",
-                    "name": "Service 2",
-                    "description": "Beschrijving van service 2",
+                    "name": "Vertical Farming Solutions",
+                    "description": "Ruimtebesparende landbouwmethoden voor stedelijke gebieden.",
                     "image": ""
                 }
             ]
