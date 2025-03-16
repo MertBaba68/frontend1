@@ -15,7 +15,7 @@ const ServicePage = async () => {
                 <ActionBar />
             </div>
 
-            <div className="services-container">
+            <div className="service-page-services-container">
                 <Services data={servicesFromCategory} />
             </div>
             <div className="service-page-contact-container">

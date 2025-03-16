@@ -23,7 +23,7 @@
     width: 100%;
 }
 
-.services-container {
+.service-page-services-container {
     grid-row: 3;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Read about */
