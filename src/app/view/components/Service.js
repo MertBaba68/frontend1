@@ -7,8 +7,7 @@ const Service = (data) => {
             <div className="service-container">
                 <img className="service-image" alt="Image of service" src={"placeholder-categories.png"}/>
                 <h2 className="service-title" >{data.data.name}</h2>
-                <p className="service-description" >Slimme agrarische sensor: meet bodemgegevens, bespaar water, verhoog opbrengst en optimaliseer
-                    gewasgroei in real-time!</p>
+                <p className="service-description" >{data.data.description}</p>
             </div>
 
         </>

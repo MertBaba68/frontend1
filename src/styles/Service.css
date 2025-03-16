@@ -36,9 +36,11 @@
     margin-top: 0.5rem;
     line-height: 1.75rem;
     text-align: left; /* Center of left */
+    padding-bottom: 0.5rem;
 }
 
 .service-description {
     text-align: center;
     padding: 0.5rem;
+    font-size: 1rem;
 }
