@@ -1,11 +1,11 @@
 import Service from "@/app/view/components/Service";
 import "/src/styles/Services.css"
 
-const Services = (data) => {
+const Services = ({ servicesCategory }) => {
     return (
         <div className="services-container">
-            {data.data.services.map(service => (
-                <Service data={service} key={service.id}/>
+            {servicesCategory.services.map(service => (
+                <Service serviceData={service} key={service.id}/>
             ))}
         </div>
     )

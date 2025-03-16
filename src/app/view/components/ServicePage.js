@@ -2,9 +2,9 @@ import Services from "@/app/view/components/Services";
 import ActionBar from "@/app/view/components/ActionBar";
 import "/src/styles/ServicePage.css"
 
-const ServicePage = ({ category }) => {
+const ServicePage = ({ categoryData }) => {
 
-    if (!category) {
+    if (!categoryData) {
         return <p>Loading category data...</p>;
     }
 
@@ -18,7 +18,7 @@ const ServicePage = ({ category }) => {
             </div>
 
             <div className="service-page-services-container">
-                <Services data={category} />
+                <Services servicesCategory={categoryData} />
             </div>
             <div className="service-page-contact-container">
                 <p>Contact soon...</p>
