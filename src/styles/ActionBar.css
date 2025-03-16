@@ -7,7 +7,6 @@
     min-height: 350px;
     background-color: var(--card-background);
     padding: 20px;
-    max-width: 40%;
     margin: 0 auto;
 }
 
@@ -39,15 +38,12 @@
     cursor: pointer;
     transition: background-color 0.3s;
     text-align: left;
+    display: block;
+    margin: 0;
 }
 
 .actionbar-filter:hover {
     background-color: lightgray;
-}
-
-.actionbar-container {
-    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
-    border-radius: 10px;
 }
 
 .actionbar-input:focus {

@@ -1,6 +1,7 @@
 .service-page-container {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto; /*Read about */
     align-items: center;
     width: 100%;
     height: 100%;
@@ -9,7 +10,24 @@
     background-size: cover;
     background-position: center;
     background-color: white;
-    color: #25282b;
 }
 
+.actionbar-container {
+    grid-row: 1;
+}
 
+.services-container {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Read about */
+    gap: 20px;
+}
+
+.contact-footer {
+    grid-row: 3;
+}
+
+.service-page-container > * { /* Read about */
+    max-width: 1200px;
+    margin: 0 auto;
+}
