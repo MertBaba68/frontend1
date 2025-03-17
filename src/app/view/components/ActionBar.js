@@ -1,9 +1,6 @@
 import "/src/styles/ActionBar.css"
 
 const ActionBar = ({ servicesCategoryData }) => {
-
-    console.log(servicesCategoryData)
-
     return (
         <>
             <div className="actionbar-container">
@@ -20,5 +17,4 @@ const ActionBar = ({ servicesCategoryData }) => {
 
     )
 }
-
 export default ActionBar;

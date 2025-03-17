@@ -26,16 +26,14 @@
 
 .service-page-services-container {
     grid-row: 3;
-    display: grid;
-    /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); !* Read about *!*/
-    gap: 20px;
     width: 100%;
     padding: 0 1rem 0 1rem;
 }
 
-.service-page-contact-footer {
+.service-page-contact-container {
     grid-row: 4;
     width: 100%;
+    padding: 0 1rem 1.5rem 1rem;
 }
 
 .service-page-container > * { /* Read about */
