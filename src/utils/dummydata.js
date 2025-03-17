@@ -1,85 +1,84 @@
 export const getCategoriesDummy = async () => {
     return [
         {
-            "id": "7a0e6b1b-92d4-4b56-9905-e8c6d57b2b5b",
+            "id": "a1b2c3d4e5f67890abcd1234ef567890",
             "name": "Agriculture",
             "image": "",
             "services": [
                 {
-                    "id": "ad0b7d97-c99e-4e6b-bd1a-53a440d7e9ff",
+                    "id": "a0b1c2d3e4f56789abcdef0123456789",
                     "name": "Precision Farming Systems",
                     "description": "Gebruik GPS en sensoren om planten en oogsten te optimaliseren voor een hogere opbrengst.",
                     "image": ""
                 },
                 {
-                    "id": "fb4e63bb-b290-4e62-8324-ef5fa6ad1f63",
+                    "id": "b1c2d3e4f567890abcdef0123456789a",
                     "name": "Smart Irrigation Management",
                     "description": "Automatische irrigatiesystemen die watergebruik aanpassen aan bodemcondities.",
                     "image": ""
                 },
                 {
-                    "id": "ad0b7d97-c99e-4e6b-bd1a-53a44057e9ff",
+                    "id": "c2d3e4f567890abcdef0123456789ab",
                     "name": "Livestock Health Monitoring",
                     "description": "Draagbare apparaten die de gezondheid van vee volgen en waarschuwen bij afwijkingen.",
                     "image": ""
                 },
                 {
-                    "id": "fb4e63bb-b290-4e62-8324-ef5wa6ad1f63",
+                    "id": "d3e4f567890abcdef0123456789abcd",
                     "name": "Crop Yield Prediction",
                     "description": "Gebruik AI en data-analyse om oogsten te voorspellen en strategieën aan te passen.",
                     "image": ""
                 },
                 {
-                    "id": "td0b7d97-c99e-4e62-bd1a-53a44057e9ff",
+                    "id": "e4f567890abcdef0123456789abcde",
                     "name": "Sustainable Pest Control",
                     "description": "Biologische methoden om plagen te bestrijden zonder milieuschade.",
                     "image": ""
                 },
                 {
-                    "id": "kb4e63bb-b290-4e62-8324-ef5wa6ad1f63",
+                    "id": "f567890abcdef0123456789abcdef0",
                     "name": "Vertical Farming Solutions",
                     "description": "Ruimtebesparende landbouwmethoden voor stedelijke gebieden.",
                     "image": ""
                 }
             ]
-        },
-        {
-            "id": "84663b12-86c3-4906-832d-22f3896a2c27",
+        },{
+            "id": "a1b2c3d4e5f67890abcd1234ef567890",
             "name": "Healthcare",
             "image": "",
             "services": [
                 {
-                    "id": "c9b19f6f-d681-4f7e-b424-7fe48fd1e741",
+                    "id": "a0b1c2d3e4f56789abcdef0123456789",
                     "name": "Telemedicine Platforms",
                     "description": "Online consultatieplatforms voor patiënten om remote medische hulp te ontvangen.",
                     "image": ""
                 },
                 {
-                    "id": "8999a33b-79e3-4e2c-bfc9-cfa7e0840e1e",
+                    "id": "b1c2d3e4f567890abcdef0123456789a",
                     "name": "AI Diagnostics Assistant",
                     "description": "Artificiële intelligentie die medische beelden analyseert voor snellere diagnose.",
                     "image": ""
                 },
                 {
-                    "id": "d8f3a5e0-5f6c-4c49-9c0a-47c30a2f1102",
+                    "id": "c2d3e4f567890abcdef0123456789ab",
                     "name": "Wearable Health Monitors",
                     "description": "Draagbare apparaten die vitale functies zoals hartslag en bloeddruk continu monitoren.",
                     "image": ""
                 },
                 {
-                    "id": "e6c3a5b7-9f54-4e0a-8f89-5d26abcf73a3",
+                    "id": "d3e4f567890abcdef0123456789abcd",
                     "name": "Personalized Medicine",
                     "description": "Behandelingen op maat gebaseerd op genetische gegevens van de patiënt.",
                     "image": ""
                 },
                 {
-                    "id": "f4b7c2a8-6f82-49cc-8e94-94b3d26f5d9f",
+                    "id": "e4f567890abcdef0123456789abcde",
                     "name": "Virtual Reality Therapy",
                     "description": "VR-toepassingen voor pijnbestrijding en behandeling van fobieën.",
                     "image": ""
                 },
                 {
-                    "id": "a1b2c3d4-1234-5678-9123-4567c3d4a1b2",
+                    "id": "f567890abcdef0123456789abcdef0",
                     "name": "Electronic Health Records",
                     "description": "Digitale patiëntendossiers voor betere gegevensuitwisseling tussen zorgverleners.",
                     "image": ""
