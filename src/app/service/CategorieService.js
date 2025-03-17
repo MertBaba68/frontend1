@@ -1,6 +1,9 @@
-import {error} from "next/dist/build/output/log";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
+
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 const getCategories = async () => {
+
     try {
         const data = await fetch("http://localhost:8080/categories/");
         return await data.json();
@@ -9,11 +12,20 @@ const getCategories = async () => {
     }
 }
 
-export const getServicesFromCategory = async (categoryName) => {
-    const data = await getCategories()
-    const category = data.find(category => category.name === categoryName);
-    if (!category) {
-        throw new Error(`No category with name ${categoryName}`);
+export const getCategoryByName = async (categoryName) => {
+    try {
+        const response = await fetch(`${API_BASE_URL}/categories/name/${categoryName}`)
+
+        if (!response.ok) {
+            if (response.status === 404) {
+                throw new Error(`Category "${categoryName}" not found.`);
+            }
+            throw new Error(`Failed to fetch category: ${response.statusText}`);
+        }
+
+        return await response.json();
+
+    } catch (error) {
+        throw new Error(error.message || "An unknown error occurred.");
     }
-    return category;
 }
