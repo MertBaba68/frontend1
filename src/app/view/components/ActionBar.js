@@ -1,9 +1,10 @@
 import "/src/styles/ActionBar.css"
+import Card from "@/app/view/components/Card";
 
 const ActionBar = ({ servicesCategoryData }) => {
     return (
         <>
-            <div className="actionbar-container">
+            <Card>
                 <h1 className="actionbar-heading">{servicesCategoryData.name}</h1>
                 <p className="actionbar-description">Zoek hier naar uw toekomstige dienst</p>
                 <input
@@ -12,7 +13,7 @@ const ActionBar = ({ servicesCategoryData }) => {
                     placeholder="Zoeken"
                 />
                 <p className="actionbar-filter">Filter</p>
-            </div>
+            </Card>
         </>
 
     )
