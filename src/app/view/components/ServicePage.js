@@ -3,11 +3,6 @@ import ActionBar from "@/app/view/components/ActionBar";
 import "/src/styles/ServicePage.css"
 
 const ServicePage = ({ categoryData }) => {
-
-    if (!categoryData) {
-        return <p>Loading category data...</p>;
-    }
-
     return (
         <div className="service-page-container">
             <div className="service-page-header-to-be-made" >

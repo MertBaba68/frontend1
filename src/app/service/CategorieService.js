@@ -1,18 +1,19 @@
+import {error} from "next/dist/build/output/log";
+
 const getCategories = async () => {
     try {
         const data = await fetch("http://localhost:8080/categories/");
         return await data.json();
     } catch (error) {
-        console.error(error);
+        return error
     }
 }
 
 export const getServicesFromCategory = async (categoryName) => {
-    const dummy = await getCategories()
-    return dummy.find(category => {
-        if (category.name === categoryName) {
-            console.log("Category: " + category)
-            return category
-        }
-    })
+    const data = await getCategories()
+    const category = data.find(category => category.name === categoryName);
+    if (!category) {
+        throw new Error(`No category with name ${categoryName}`);
+    }
+    return category;
 }
