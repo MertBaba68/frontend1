@@ -3,7 +3,7 @@
 .service-container {
     display: flex;
     flex-direction: column;
-    min-height: 350px;
+    max-height: 350px;
     background-color: var(--card-background);
     padding: 1.5rem;
     border-radius: 0.5rem;
@@ -54,5 +54,6 @@
 @media (max-width: 400px) {
     .service-container {
         max-width: 100%;
+        max-height: 300px;
     }
 }
