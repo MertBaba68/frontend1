@@ -4,16 +4,15 @@ import { useEffect, useState } from "react";
 import { getServicesFromCategory } from "@/app/service/CategorieService";
 import ServicePage from "@/app/view/components/ServicePage";
 import { useParams } from "next/navigation";
-import BlankPage from "@/app/view/BlankPage";
+import StatusPage from "@/app/view/StatusPage";
 
 const ServicePageController = ({ categoryName: propCategory }) => {
     const { categoryName: urlCategory } = useParams();
     const [error, setError] = useState(null);
+    const [categoryData, setCategoryData] = useState(null);
 
     // use prop wich has a value
     const categoryToFetch = propCategory || urlCategory;
-
-    const [categoryData, setCategoryData] = useState(null);
 
     useEffect(() => {
         if (!categoryToFetch) return;
@@ -33,11 +32,9 @@ const ServicePageController = ({ categoryName: propCategory }) => {
     }, [categoryToFetch]);
 
     return error ? (
-        <BlankPage errormessage={error.message} />
-        // <p>{error.message}</p>
+        <StatusPage type="error" status={error.message} />
     ) : !categoryData ? (
-        <BlankPage information="Loading..." />
-        // <p>Loading...</p>
+        <StatusPage type="info" status="Loading..." />
     ) : (
         <ServicePage categoryData={categoryData} />
     );
