@@ -21,8 +21,7 @@
 .service-page-actionbar-container {
     grid-row: 2;
     width: 100%;
-    padding-bottom: 1.5rem;
-
+    padding: 0 1rem 1.5rem 1rem;
 }
 
 .service-page-services-container {
@@ -31,6 +30,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Read about */
     gap: 20px;
     width: 100%;
+    padding: 0 1rem 0 1rem;
 }
 
 .service-page-contact-footer {

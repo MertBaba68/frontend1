@@ -8,7 +8,7 @@
     padding: 1.5rem;
     border-radius: 0.5rem;
     align-items: center;
-    width: 100%;
+    min-width: 200px;
     max-width: 250px;
     transition: transform 0.3s ease;
     cursor: pointer;
@@ -43,4 +43,16 @@
     text-align: center;
     padding: 0.5rem;
     font-size: 1rem;
+}
+
+@media (min-width: 400px) and (max-width: 700px) {
+    .service-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .service-container {
+        max-width: 100%;
+    }
 }
