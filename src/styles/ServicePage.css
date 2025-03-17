@@ -4,7 +4,7 @@
     grid-template-rows: auto auto 1fr auto; /*Read about */
     align-items: center;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0)), url("https://vodafoneziggo.scene7.com/is/image/vodafoneziggo/Ontwerp%20zonder%20titel?fmt=webp-alpha&qlt=100,0&bfc=off&wid=2480&fit=constrain");
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,6 +21,8 @@
 .service-page-actionbar-container {
     grid-row: 2;
     width: 100%;
+    padding-bottom: 1.5rem;
+
 }
 
 .service-page-services-container {
