@@ -5,8 +5,8 @@
     height: 100%;
     background-color: var(--card-background);
     padding: 20px;
-    margin: 0 auto;
     border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.35);
 }
 
 .card-container-center {
