@@ -36,7 +36,7 @@
     padding: 0 1rem 1.5rem 1rem;
 }
 
-.service-page-container > * { /* Read about */
+.service-page-container > * {
     max-width: 900px;
     margin: 0 auto;
 }
