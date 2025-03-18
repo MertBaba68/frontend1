@@ -2,9 +2,6 @@ import "/src/styles/ActionBar.css"
 import Card from "@/app/view/components/Card";
 
 const ActionBar = ({ servicesCategoryData }) => {
-
-    console.log(servicesCategoryData)
-
     return (
         <>
             <Card >

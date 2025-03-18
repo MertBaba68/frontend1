@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getCategoryByName } from "@/app/service/CategorieService";
+import { getCategoryByName } from "@/app/service/CategoryService";
 import ServicePage from "@/app/view/components/ServicePage";
 import { useParams } from "next/navigation";
 import StatusPage from "@/app/view/StatusPage";
