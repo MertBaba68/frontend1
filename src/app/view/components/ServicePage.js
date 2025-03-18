@@ -17,7 +17,7 @@ const ServicePage = ({ categoryData }) => {
                 <Services servicesCategory={categoryData} />
             </div>
             <div className="service-page-contact-container">
-                <ContactFormController/>
+                <ContactFormController page="Servicepage" />
             </div>
         </div>
     );

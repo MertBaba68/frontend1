@@ -27,9 +27,7 @@ const ContactForm = ({
             <form onSubmit={handleSubmitForm} >
                 <label htmlFor="kvk">KvK-nummer</label>
                 <input id="kvk" className="contactform-input-kvk" type="text"
-                       onChange={(e) => {
-                           setkvkNummer(e.target.value)
-                       }}
+                       onChange={(e) => setkvkNummer(e.target.value)}
                        value={kvkNummer}
                 />
 
@@ -41,25 +39,19 @@ const ContactForm = ({
 
                 <label htmlFor="phone">Telefoonnummer</label>
                 <input id="phone" className="contactform-input-phone" type="text"
-                       onChange={(e) => {
-                           setPhone(e.target.value)
-                       }}
+                       onChange={(e) => setPhone(e.target.value)}
                        value={phone}
                 />
 
                 <label htmlFor="name">Naam</label>
                 <input id="name" className="contactform-input-name" type="text"
-                       onChange={(e) => {
-                           setName(e.target.value)
-                       }}
+                       onChange={(e) => setName(e.target.value)}
                        value={name}
                 />
 
                 <label htmlFor="message">Bericht</label>
                 <textarea id="message" className="contactform-textarea-context"
-                          onChange={(e) => {
-                              setContext(e.target.value)
-                          }}
+                          onChange={(e) => setContext(e.target.value)}
                           value={context}
                 ></textarea>
 

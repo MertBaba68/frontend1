@@ -1,8 +1,9 @@
 import ContactForm from "@/app/view/components/ContactForm";
 import {useState} from "react";
+import contactForm from "@/app/view/components/ContactForm";
 
 
-const ContactFormController = () => {
+const ContactFormController = ({ page }) => {
     const [kvkNummer, setkvkNummer] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -11,11 +12,22 @@ const ContactFormController = () => {
     const [warning, setWarning] = useState("");
 
     const handleSubmitForm = () => {
-        setWarning(validateContactForm())
+        const validated = validateContactForm()
+        if (validated !== "") {
+            setWarning(validated);
+        }
+
+        else {
+
+        }
+    }
+
+    const postContactForm = () => {
+
     }
 
     const validateContactForm = () => {
-        const startOfErrorMessage = "Please enter a valid (not empty): "
+        const startOfErrorMessage = "Please enter a valid: "
         if (kvkNummer === "") {
             return startOfErrorMessage +  "kvk number"
         }
