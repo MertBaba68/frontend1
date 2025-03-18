@@ -2,14 +2,14 @@ import config from "../../../config/config";
 
 const API_BASE_URL = config.API_BASE_URL;
 
-const formatContact = (data) => {
+const formatContact = (formData) => {
     return {
-        chamberOfCommerce: data.kvkNummer,
-        email: data.email,
-        phone: data.phone,
-        contactPersonName: data.name,
+        chamberOfCommerce: formData.kvkNummer,
+        email: formData.email,
+        phone: formData.phone,
+        contactPersonName: formData.name,
         location: "homepage", //TODO: integrate location
-        context: data.context
+        context: formData.context
     }
 }
 
@@ -27,8 +27,6 @@ export const postContact = async (formData) => {
         }
 
         return { message: "Uw contactformulier is succesvol verzonden." }
-
-
     } catch (error) {
         throw new Error(error.message || "An unknown error occurred.");
     }
