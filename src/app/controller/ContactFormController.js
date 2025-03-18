@@ -1,6 +1,7 @@
 import ContactForm from "@/app/view/components/ContactForm";
 import {useState} from "react";
 import contactForm from "@/app/view/components/ContactForm";
+import {postContact} from "@/app/service/ContactService";
 
 
 const ContactFormController = ({ page }) => {
@@ -22,7 +23,16 @@ const ContactFormController = ({ page }) => {
         }
     }
 
-    const postContactForm = () => {
+    const submitContactForm = () => {
+        const formattedData = {
+            kvkNummer,
+            email,
+            phone,
+            name,
+            context
+        }
+
+        postContact(formattedData)
 
     }
 
