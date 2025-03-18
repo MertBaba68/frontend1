@@ -4,7 +4,7 @@ import Card from "@/app/view/components/Card";
 const ActionBar = ({ servicesCategoryData }) => {
     return (
         <>
-            <Card>
+            <Card center={true} >
                 <h1 className="actionbar-heading">{servicesCategoryData.name}</h1>
                 <p className="actionbar-description">Zoek hier naar uw toekomstige dienst</p>
                 <input

@@ -1,0 +1,21 @@
+input, textarea {
+    width: 95%;
+    padding: 15px 20px;
+    border: 1px gray solid;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.contactform-textarea-context {
+    resize: none;
+    height: 140px;
+}
+
