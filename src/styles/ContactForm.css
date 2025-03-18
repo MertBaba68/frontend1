@@ -30,16 +30,22 @@ input:focus, textarea:focus {
     font-family: var(--font);
 }
 
-.contactform-error {
-    color: var(--color_primary);
+.contactform-submitting, .contactform-error, .contactform-success {
     font-size: 1.2rem;
     margin: 0 5px 5px 5px;
 }
 
+.contactform-submitting {
+    color: var(--color_turquoise)
+}
+
+.contactform-error {
+    color: var(--color_primary);
+
+}
+
 .contactform-success {
     color: var(--color_success);
-    font-size: 1.2rem;
-    margin: 0 5px 5px 5px;
 }
 
 form {

@@ -11,6 +11,7 @@ const ContactFormController = ({ page }) => {
     const [context, setContext] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleSubmitForm = () => {
         const error = validateContactForm()
@@ -26,17 +27,19 @@ const ContactFormController = ({ page }) => {
 
     const submitContactForm = async () => {
         const formattedData = { kvkNummer, email, phone, name, context }
+        setIsSubmitting(true);
+        setSuccessMessage("")
+        setErrorMessage("")
 
         try {
             const data = await postContact(formattedData)
             setSuccessMessage(data.message)
-            setErrorMessage("")
         } catch (error) {
-            setSuccessMessage("")
             setErrorMessage(
                 "Er is iets foutgegaan tijdens het versturen van het formulier."
             )
         }
+        setIsSubmitting(false);
     }
 
     const validateContactForm = () => {
@@ -44,7 +47,7 @@ const ContactFormController = ({ page }) => {
         const validations = [
             { condition: kvkNummer === "", message: "kvk number" },
             { condition: email === "" || !email.includes("@"), message: "email" },
-            { condition: phone === "", message: "phonenumber" },
+            { condition: phone === "" || phone.length !== 10, message: "phonenumber" },
             { condition: name === "", message: "name" },
             { condition: context === "", message: "context" },
         ]
@@ -63,6 +66,7 @@ const ContactFormController = ({ page }) => {
             submitForm={handleSubmitForm}
             errorMessage={errorMessage}
             successMessage={successMessage}
+            isSubmitting={isSubmitting}
         />
     )
 }

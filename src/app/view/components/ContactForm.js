@@ -9,7 +9,7 @@ const ContactForm = ({
     name, setName,
     context, setContext,
     submitForm,
-    errorMessage, successMessage
+    errorMessage, successMessage, isSubmitting
                      }) => {
 
     const handleSubmitForm = (e) => {
@@ -26,6 +26,8 @@ const ContactForm = ({
                 <p className="contactform-success">{successMessage}</p>}
             {errorMessage &&
                 <p className="contactform-error">{errorMessage}</p>}
+            {isSubmitting &&
+                <p className="contactform-submitting">...Sending...</p>}
 
             <form onSubmit={handleSubmitForm} >
                 <label htmlFor="kvk">KvK-nummer</label>
