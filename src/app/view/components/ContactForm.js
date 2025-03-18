@@ -1,6 +1,5 @@
 import "/src/styles/ContactForm.css"
 import Card from "@/app/view/components/Card";
-import {useState} from "react";
 import {VodafoneButton} from "@/app/view/components/VodafoneButton";
 
 const ContactForm = ({
