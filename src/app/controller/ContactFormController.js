@@ -10,25 +10,30 @@ const ContactFormController = () => {
     const [context, setContext] = useState("");
     const [warning, setWarning] = useState("");
 
+    const handleSubmitForm = () => {
+        validateContactForm()
+    }
+
     const validateContactForm = () => {
+        const startOfErrorMessage = "Please enter a valid (not empty): "
         if (kvkNummer === "") {
-            setWarning("Pleas enter a valid kvk number");
+            return startOfErrorMessage +  "kvk number"
         }
 
         if (email === "" || !email.includes("@")) {
-            setWarning("Please enter a valid email");
+            return startOfErrorMessage +  "email"
         }
 
         if (phone === "") {
-            setWarning("Please enter a valid phonenumber");
+            return startOfErrorMessage +  "phonenumber";
         }
 
         if (name === "") {
-            setWarning("Please enter a valid (not empty) name");
+            return startOfErrorMessage +  "name";
         }
 
         if (context === "") {
-            setWarning("Please enter a valid (not empty) context");
+            return startOfErrorMessage +  "context";
         }
     }
 
@@ -40,6 +45,7 @@ const ContactFormController = () => {
             name={name} setName={setName}
             context={context} setContext={setContext}
             warning={warning}
+            submitForm={handleSubmitForm}
         />
     )
 }

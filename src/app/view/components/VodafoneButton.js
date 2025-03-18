@@ -1,9 +1,9 @@
 import "/src/styles/VodafoneButton.css"
 
-const VodafoneButton = ({ children }) => {
+const VodafoneButton = ({ children, type = "button" }) => {
     return (
         <div className="vodafonebutton-container" >
-            <button className="vodafonebutton-button">{children}</button>
+            <button type={type} className="vodafonebutton-button">{children}</button>
         </div>
     )
 }

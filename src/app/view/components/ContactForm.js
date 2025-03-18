@@ -13,13 +13,18 @@ const ContactForm = ({
     submitForm
                      }) => {
 
+    const handleSubmitForm = (e) => {
+        e.preventDefault();
+        submitForm()
+    }
+
     return (
         <Card>
             <h1 className="contactform-heading">Enthousiast?</h1>
             <p className="contactform-description">Vul hier uw informatie in</p>
             <p className="contactform-warning">{warning}</p>
 
-            <form onSubmit={submitForm}>
+            <form onSubmit={handleSubmitForm} >
                 <label htmlFor="kvk">KvK-nummer</label>
                 <input id="kvk" className="contactform-input-kvk" type="text"
                        onChange={(e) => {
@@ -58,7 +63,7 @@ const ContactForm = ({
                           value={context}
                 ></textarea>
 
-                <VodafoneButton onClick={submitForm}>Verzend</VodafoneButton>
+                <VodafoneButton type="submit" onClick={handleSubmitForm}>Verzend</VodafoneButton>
             </form>
 
         </Card>
