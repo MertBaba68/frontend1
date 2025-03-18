@@ -44,12 +44,10 @@ const ContactFormController = ({ page }) => {
 
     const validateContactForm = () => {
 
-        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
         const validations = [
             { condition: kvkNummer === "", message: "kvk number" },
             { condition: email === "" ||
-                    emailRegex.test(email)
+                    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
                 , message: "email" },
             { condition: phone === "" || phone.length !== 10, message: "phonenumber" },
             { condition: name === "", message: "name" },
