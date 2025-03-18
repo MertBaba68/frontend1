@@ -1,0 +1,11 @@
+/. {
+
+button {
+    background-color: var(--color_primary);
+    color: white;
+    width: 100px;
+    height: 48px;
+    outline: chocolate;
+    border-radius: 1rem;
+    cursor: pointer;
+}

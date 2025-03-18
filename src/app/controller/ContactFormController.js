@@ -10,9 +10,9 @@ const ContactFormController = () => {
     const [context, setContext] = useState("");
     const [warning, setWarning] = useState("");
 
-    const hello = () => {
+    const validateContactForm = () => {
         if (kvkNummer === "") {
-            setWarning("Pleas")
+            setWarning("Pleas enter a valid kvk number");
         }
 
         if (email === "" || !email.includes("@")) {
@@ -20,15 +20,15 @@ const ContactFormController = () => {
         }
 
         if (phone === "") {
-
+            setWarning("Please enter a valid phonenumber");
         }
 
         if (name === "") {
-
+            setWarning("Please enter a valid (not empty) name");
         }
 
         if (context === "") {
-
+            setWarning("Please enter a valid (not empty) context");
         }
     }
 
@@ -39,6 +39,7 @@ const ContactFormController = () => {
             phone={phone} setPhone={setPhone}
             name={name} setName={setName}
             context={context} setContext={setContext}
+            warning={warning}
         />
     )
 }
