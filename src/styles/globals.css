@@ -20,6 +20,8 @@
   --color_turquoise: #007c92;
   --color_success: #008a00;
   --a11y-outline-color: #0db1f2;
+
+  --font: Vodafone, Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
 }
 
 html,
