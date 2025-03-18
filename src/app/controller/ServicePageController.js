@@ -30,6 +30,12 @@ const ServicePageController = ({ categoryName: propCategory }) => {
         fetchSelectedCategory();
     }, [categoryToFetch]);
 
+    useEffect(() => {
+        if (categoryData) {
+            document.title = `Vodafone Partner for Progress | ${categoryData.name}`;
+        }
+    },[categoryData])
+
     return error ? (
         <StatusPage type="error" status={error.message} />
     ) : !categoryData ? (
