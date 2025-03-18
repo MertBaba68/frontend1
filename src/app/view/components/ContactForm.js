@@ -20,7 +20,7 @@ const ContactForm = ({
 
     return (
         <Card>
-            <h1 className="contactform-heading">Enthousiast?</h1>
+            <h2 className="contactform-heading">Enthousiast?</h2>
             <p className="contactform-description">Vul hier uw informatie in</p>
             <p className="contactform-warning">{warning}</p>
 

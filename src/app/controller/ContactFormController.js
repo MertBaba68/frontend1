@@ -11,7 +11,7 @@ const ContactFormController = () => {
     const [warning, setWarning] = useState("");
 
     const handleSubmitForm = () => {
-        validateContactForm()
+        setWarning(validateContactForm())
     }
 
     const validateContactForm = () => {
@@ -35,6 +35,8 @@ const ContactFormController = () => {
         if (context === "") {
             return startOfErrorMessage +  "context";
         }
+
+        return ""
     }
 
     return(
