@@ -8,7 +8,7 @@ const formatContact = (data) => {
         email: data.email,
         phone: data.phone,
         contactPersonName: data.name,
-        location: data.location,
+        location: "homepage", //TODO: integrate location
         context: data.context
     }
 }
@@ -26,7 +26,9 @@ export const postContact = async (formData) => {
             throw new Error(`HTTP ${response.status}: ${await response.text() || "Unknown error"}`);
         }
 
-        return await response.json();
+        return { message: "Uw contactformulier is succesvol verzonden." }
+
+
     } catch (error) {
         throw new Error(error.message || "An unknown error occurred.");
     }

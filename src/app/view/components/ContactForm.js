@@ -9,8 +9,8 @@ const ContactForm = ({
     phone, setPhone,
     name, setName,
     context, setContext,
-    warning,
-    submitForm
+    submitForm,
+    errorMessage, successMessage
                      }) => {
 
     const handleSubmitForm = (e) => {
@@ -22,7 +22,11 @@ const ContactForm = ({
         <Card>
             <h2 className="contactform-heading">Enthousiast?</h2>
             <p className="contactform-description">Vul hier uw informatie in</p>
-            <p className="contactform-warning">{warning}</p>
+
+            {successMessage &&
+                <p className="contactform-success">{successMessage}</p>}
+            {errorMessage &&
+                <p className="contactform-error">{errorMessage}</p>}
 
             <form onSubmit={handleSubmitForm} >
                 <label htmlFor="kvk">KvK-nummer</label>
@@ -55,7 +59,7 @@ const ContactForm = ({
                           value={context}
                 ></textarea>
 
-                <VodafoneButton type="submit" onClick={handleSubmitForm}>Verzend</VodafoneButton>
+                <VodafoneButton type="submit">Verzend</VodafoneButton>
             </form>
 
         </Card>

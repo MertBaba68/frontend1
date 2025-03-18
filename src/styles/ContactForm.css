@@ -4,7 +4,7 @@
 
 .contactform-description {
     font-size: 1.2rem;
-    margin: 10px 10px 10px 5px;
+    margin: 5px 10px 10px 5px;
 }
 
 input, textarea {
@@ -28,10 +28,16 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 140px;
 }
 
-.contactform-warning {
+.contactform-error {
     color: var(--color_primary);
     font-size: 1.2rem;
-    margin: 5px;
+    margin: 0 5px 5px 5px;
+}
+
+.contactform-success {
+    color: var(--color_primary);
+    font-size: 1.2rem;
+    margin: 0 5px 5px 5px;
 }
 
 form {

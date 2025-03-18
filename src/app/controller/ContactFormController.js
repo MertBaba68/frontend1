@@ -10,29 +10,41 @@ const ContactFormController = ({ page }) => {
     const [phone, setPhone] = useState("");
     const [name, setName] = useState("");
     const [context, setContext] = useState("");
-    const [warning, setWarning] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
 
     const handleSubmitForm = () => {
         const validated = validateContactForm()
         if (validated !== "") {
-            setWarning(validated);
+            setErrorMessage(validated);
         }
 
         else {
-
+            submitContactForm()
         }
     }
 
-    const submitContactForm = () => {
+    const submitContactForm = async () => {
         const formattedData = {
             kvkNummer,
             email,
             phone,
             name,
-            context
+            context,
         }
 
-        postContact(formattedData)
+        try {
+            const data = await postContact(formattedData)
+            console.log(data)
+            setSuccessMessage(data.message)
+            setErrorMessage("")
+        } catch (error) {
+            console.log("Error posting contact", error)
+            setSuccessMessage("")
+            setErrorMessage(
+                "Er is iets foutgegaan tijdens het versturen van het formulier."
+            )
+        }
 
     }
 
@@ -68,8 +80,9 @@ const ContactFormController = ({ page }) => {
             phone={phone} setPhone={setPhone}
             name={name} setName={setName}
             context={context} setContext={setContext}
-            warning={warning}
             submitForm={handleSubmitForm}
+            errorMessage={errorMessage}
+            successMessage={successMessage}
         />
     )
 }
