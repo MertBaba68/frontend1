@@ -1,6 +1,6 @@
-import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
+import config from "/config/config";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_BASE_URL = config.API_BASE_URL;
 
 const getCategories = async () => {
     try {
