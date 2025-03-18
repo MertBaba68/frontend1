@@ -14,9 +14,10 @@ const ContactFormController = ({ page }) => {
     const [successMessage, setSuccessMessage] = useState("");
 
     const handleSubmitForm = () => {
-        const validated = validateContactForm()
-        if (validated !== "") {
-            setErrorMessage(validated);
+        const error = validateContactForm()
+        if (error !== "") {
+            setErrorMessage(error);
+            setSuccessMessage("")
         }
 
         else {
@@ -25,21 +26,13 @@ const ContactFormController = ({ page }) => {
     }
 
     const submitContactForm = async () => {
-        const formattedData = {
-            kvkNummer,
-            email,
-            phone,
-            name,
-            context,
-        }
+        const formattedData = { kvkNummer, email, phone, name, context }
 
         try {
             const data = await postContact(formattedData)
-            console.log(data)
             setSuccessMessage(data.message)
             setErrorMessage("")
         } catch (error) {
-            console.log("Error posting contact", error)
             setSuccessMessage("")
             setErrorMessage(
                 "Er is iets foutgegaan tijdens het versturen van het formulier."
