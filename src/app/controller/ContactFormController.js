@@ -49,28 +49,17 @@ const ContactFormController = ({ page }) => {
     }
 
     const validateContactForm = () => {
-        const startOfErrorMessage = "Please enter a valid: "
-        if (kvkNummer === "") {
-            return startOfErrorMessage +  "kvk number"
-        }
 
-        if (email === "" || !email.includes("@")) {
-            return startOfErrorMessage +  "email"
-        }
+        const validations = [
+            { condition: kvkNummer === "", message: "kvk number" },
+            { condition: email === "" || !email.includes("@"), message: "email" },
+            { condition: phone === "", message: "phonenumber" },
+            { condition: name === "", message: "name" },
+            { condition: context === "", message: "context" },
+        ]
 
-        if (phone === "") {
-            return startOfErrorMessage +  "phonenumber";
-        }
-
-        if (name === "") {
-            return startOfErrorMessage +  "name";
-        }
-
-        if (context === "") {
-            return startOfErrorMessage +  "context";
-        }
-
-        return ""
+        const invalidation = validations.find((validation) => validation.condition);
+        return invalidation ? `Please enter a valid ${invalidation.message}` : ""
     }
 
     return(
