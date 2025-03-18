@@ -42,7 +42,14 @@ const ContactForm = ({
 
                 <label htmlFor="phone">Telefoonnummer</label>
                 <input id="phone" className="contactform-input-phone" type="text"
-                       onChange={(e) => setPhone(e.target.value)}
+                       onChange={(e) => {
+                           const inputValue = e.target.value;
+
+                           if (inputValue.length > 10) return
+                           const numericPart = inputValue.replace(/\D/g, "");
+                           setPhone(numericPart);
+
+                       }}
                        value={phone}
                 />
 
