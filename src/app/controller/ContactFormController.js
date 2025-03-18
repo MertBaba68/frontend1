@@ -8,6 +8,29 @@ const ContactFormController = () => {
     const [phone, setPhone] = useState("");
     const [name, setName] = useState("");
     const [context, setContext] = useState("");
+    const [warning, setWarning] = useState("");
+
+    const hello = () => {
+        if (kvkNummer === "") {
+            setWarning("Pleas")
+        }
+
+        if (email === "" || !email.includes("@")) {
+            setWarning("Please enter a valid email");
+        }
+
+        if (phone === "") {
+
+        }
+
+        if (name === "") {
+
+        }
+
+        if (context === "") {
+
+        }
+    }
 
     return(
         <ContactForm
