@@ -3,12 +3,12 @@
 .service-container {
     display: flex;
     flex-direction: column;
-    max-height: 350px;
+    max-height: 375px;
     background-color: var(--card-background);
     padding: 1.5rem;
     border-radius: 0.5rem;
     align-items: center;
-    min-width: 200px;
+    min-width: 185px;
     max-width: 250px;
     transition: transform 0.3s ease;
     cursor: pointer;
