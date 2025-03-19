@@ -1,0 +1,54 @@
+.actionbar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    background-color: var(--card-background);
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+}
+
+.actionbar-heading {
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+}
+
+.actionbar-description {
+    font-size: 1rem;
+    margin: 10px;
+}
+
+.actionbar-input {
+    width: 95%;
+    padding: 15px 20px;
+    border: 1px gray solid;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.actionbar-filter {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: left;
+    display: block;
+    margin: 0;
+}
+
+.actionbar-filter:hover {
+    background-color: lightgray;
+}
+
+.actionbar-input:focus {
+    outline: none;
+    border-color: #0070f3;
+    box-shadow: 0 0 0 2px rgba(0,112,243,0.2);
+}

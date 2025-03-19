@@ -1,0 +1,25 @@
+.services-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+@media (min-width: 900px) {
+    .services-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 400px) and (max-width: 700px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+}
