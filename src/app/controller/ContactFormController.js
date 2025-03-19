@@ -50,14 +50,14 @@ const ContactFormController = ({ page }) => {
             { condition: email === "" ||
                     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
                 , message: "email" },
-            { condition: phone === "" || phone.length !== 10, message: "phonenumber" },
-            { condition: name === "", message: "name" },
+            { condition: phone === "" || phone.length !== 10, message: "tel-nummer" },
+            { condition: name === "", message: "naam" },
             { condition: context === "", message: "context" },
             { condition: role === "", message: "role" },
         ]
 
         const invalidation = validations.find((validation) => validation.condition);
-        return invalidation ? `Please enter a valid ${invalidation.message}` : ""
+        return invalidation ? `Vul een geldige ${invalidation.message} in.` : ""
     }
 
     return(
