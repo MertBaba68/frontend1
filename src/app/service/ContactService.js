@@ -2,8 +2,10 @@ import config from "../../../config/config";
 
 const API_BASE_URL = config.API_BASE_URL;
 
-const formatContact = (formData, url) => {
-    let location = "homepage"; // Default value
+const formatContact = (formData) => {
+    let location = "homepage";
+
+    const url = window.location.pathname;
 
     if (url.startsWith("/categories/")) {
         location = url.split("/categories/")[1];
@@ -12,7 +14,7 @@ const formatContact = (formData, url) => {
     }
 
     return {
-        chamberOfCommerce: formData.bedrijfsNaam,
+        companyName: formData.companyName,
         email: formData.email,
         phone: formData.phone,
         contactPersonName: formData.name,

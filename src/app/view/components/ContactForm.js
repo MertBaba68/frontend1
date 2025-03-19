@@ -3,7 +3,7 @@ import Card from "@/app/view/components/Card";
 import {VodafoneButton} from "@/app/view/components/VodafoneButton";
 
 const ContactForm = ({
-    bedrijfsNaam, setBedrijfsNaam,
+    companyName, setCompanyName,
     email, setEmail,
     phone, setPhone,
     name, setName,
@@ -30,10 +30,10 @@ const ContactForm = ({
                 <p className="contactform-submitting">...Sending...</p>}
 
             <form onSubmit={handleSubmitForm}>
-                <label htmlFor="bedrijfsnaam">Bedrijfsnaam</label>
-                <input id="bedrijfsnaam" className="contactform-input-bedrijfsnaam" type="text"
-                       onChange={(e) => setBedrijfsNaam(e.target.value)}
-                       value={bedrijfsNaam}
+                <label htmlFor="companyName">Bedrijfsnaam</label>
+                <input id="companyName" className="contactform-input-companyName" type="text"
+                       onChange={(e) => setCompanyName(e.target.value)}
+                       value={companyName}
                 />
 
                 <label htmlFor="name">Naam</label>

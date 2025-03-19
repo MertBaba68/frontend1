@@ -3,7 +3,7 @@ import {useState} from "react";
 import {postContact} from "@/app/service/ContactService";
 
 const ContactFormController = ({ page }) => {
-    const [bedrijfsNaam, setbedrijfsNaam] = useState("");
+    const [companyName, setCompanyName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [name, setName] = useState("");
@@ -24,7 +24,7 @@ const ContactFormController = ({ page }) => {
     }
 
     const submitContactForm = async () => {
-        const formattedData = { bedrijfsNaam, email, phone, name, context, role }
+        const formattedData = { companyName, email, phone, name, context, role }
         setIsSubmitting(true);
         setSuccessMessage("")
         setErrorMessage("")
@@ -37,14 +37,14 @@ const ContactFormController = ({ page }) => {
                 "Er is iets foutgegaan tijdens het versturen van het formulier."
             )
         }
-        
+
         setIsSubmitting(false);
     }
 
     const validateContactForm = () => {
 
         const validations = [
-            { condition: bedrijfsNaam === "", message: "bedrijfsnaam" },
+            { condition: companyName === "", message: "bedrijfsnaam" },
             { condition: email === "" ||
                     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
                 , message: "email" },
@@ -60,7 +60,7 @@ const ContactFormController = ({ page }) => {
 
     return(
         <ContactForm
-            bedrijfsNaam={bedrijfsNaam} setBedrijfsNaam={setbedrijfsNaam}
+            companyName={companyName} setCompanyName={setCompanyName}
             email={email} setEmail={setEmail}
             phone={phone} setPhone={setPhone}
             role={role} setRole={setRole}
