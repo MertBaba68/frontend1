@@ -6,6 +6,7 @@ const Service = ({ serviceData }) => {
         return <p>Loading service data...</p>;
     }
 
+    // Will be removed, only here for demo purposes
     const getRandomImage = () => {
         const images = [
             "/placeholder-categories.png",
