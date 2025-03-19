@@ -2,17 +2,25 @@ import config from "../../../config/config";
 
 const API_BASE_URL = config.API_BASE_URL;
 
-const formatContact = (formData) => {
+const formatContact = (formData, url) => {
+    let location = "homepage"; // Default value
+
+    if (url.startsWith("/categories/")) {
+        location = url.split("/categories/")[1];
+    } else if (url.startsWith("/services/")) {
+        location = url.split("/services/")[1];
+    }
+
     return {
         chamberOfCommerce: formData.bedrijfsNaam,
         email: formData.email,
         phone: formData.phone,
         contactPersonName: formData.name,
-        location: "homepage", //TODO: integrate location
+        location: location,
         context: formData.context,
         role: formData.role,
-    }
-}
+    };
+};
 
 export const postContact = async (formData) => {
     try {
