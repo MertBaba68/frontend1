@@ -2,7 +2,6 @@ import ContactForm from "@/app/view/components/ContactForm";
 import {useState} from "react";
 import {postContact} from "@/app/service/ContactService";
 
-
 const ContactFormController = ({ page }) => {
     const [bedrijfsNaam, setbedrijfsNaam] = useState("");
     const [email, setEmail] = useState("");
@@ -19,9 +18,7 @@ const ContactFormController = ({ page }) => {
         if (error !== "") {
             setErrorMessage(error);
             setSuccessMessage("")
-        }
-
-        else {
+        } else {
             submitContactForm()
         }
     }
@@ -40,6 +37,7 @@ const ContactFormController = ({ page }) => {
                 "Er is iets foutgegaan tijdens het versturen van het formulier."
             )
         }
+        
         setIsSubmitting(false);
     }
 

@@ -12,7 +12,6 @@ const ContactForm = ({
     submitForm,
     errorMessage, successMessage, isSubmitting
                      }) => {
-
     const handleSubmitForm = (e) => {
         e.preventDefault();
         submitForm()
