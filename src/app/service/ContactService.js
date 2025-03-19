@@ -4,12 +4,13 @@ const API_BASE_URL = config.API_BASE_URL;
 
 const formatContact = (formData) => {
     return {
-        chamberOfCommerce: formData.kvkNummer,
+        chamberOfCommerce: formData.bedrijfsNaam,
         email: formData.email,
         phone: formData.phone,
         contactPersonName: formData.name,
         location: "homepage", //TODO: integrate location
-        context: formData.context
+        context: formData.context,
+        role: formData.role,
     }
 }
 

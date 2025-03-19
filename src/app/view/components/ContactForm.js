@@ -3,11 +3,12 @@ import Card from "@/app/view/components/Card";
 import {VodafoneButton} from "@/app/view/components/VodafoneButton";
 
 const ContactForm = ({
-    kvkNummer, setkvkNummer,
+    bedrijfsNaam, setBedrijfsNaam,
     email, setEmail,
     phone, setPhone,
     name, setName,
     context, setContext,
+    role, setRole,
     submitForm,
     errorMessage, successMessage, isSubmitting
                      }) => {
@@ -29,11 +30,23 @@ const ContactForm = ({
             {isSubmitting &&
                 <p className="contactform-submitting">...Sending...</p>}
 
-            <form onSubmit={handleSubmitForm} >
-                <label htmlFor="kvk">KvK-nummer</label>
-                <input id="kvk" className="contactform-input-kvk" type="text"
-                       onChange={(e) => setkvkNummer(e.target.value)}
-                       value={kvkNummer}
+            <form onSubmit={handleSubmitForm}>
+                <label htmlFor="bedrijfsnaam">Bedrijfsnaam</label>
+                <input id="bedrijfsnaam" className="contactform-input-bedrijfsnaam" type="text"
+                       onChange={(e) => setBedrijfsNaam(e.target.value)}
+                       value={bedrijfsNaam}
+                />
+
+                <label htmlFor="name">Naam</label>
+                <input id="name" className="contactform-input-name" type="text"
+                       onChange={(e) => setName(e.target.value)}
+                       value={name}
+                />
+
+                <label htmlFor="role">Rol binnen bedrijf</label>
+                <input id="role" className="contactform-input-role" type="text"
+                       onChange={(e) => setRole(e.target.value)}
+                       value={role}
                 />
 
                 <label htmlFor="email">E-mail</label>
@@ -53,12 +66,6 @@ const ContactForm = ({
 
                        }}
                        value={phone}
-                />
-
-                <label htmlFor="name">Naam</label>
-                <input id="name" className="contactform-input-name" type="text"
-                       onChange={(e) => setName(e.target.value)}
-                       value={name}
                 />
 
                 <label htmlFor="message">Bericht</label>

@@ -4,10 +4,11 @@ import {postContact} from "@/app/service/ContactService";
 
 
 const ContactFormController = ({ page }) => {
-    const [kvkNummer, setkvkNummer] = useState("");
+    const [bedrijfsNaam, setbedrijfsNaam] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [name, setName] = useState("");
+    const [role, setRole] = useState("");
     const [context, setContext] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
@@ -26,7 +27,7 @@ const ContactFormController = ({ page }) => {
     }
 
     const submitContactForm = async () => {
-        const formattedData = { kvkNummer, email, phone, name, context }
+        const formattedData = { bedrijfsNaam, email, phone, name, context, role }
         setIsSubmitting(true);
         setSuccessMessage("")
         setErrorMessage("")
@@ -45,13 +46,14 @@ const ContactFormController = ({ page }) => {
     const validateContactForm = () => {
 
         const validations = [
-            { condition: kvkNummer === "", message: "kvk number" },
+            { condition: bedrijfsNaam === "", message: "bedrijfsnaam" },
             { condition: email === "" ||
                     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
                 , message: "email" },
             { condition: phone === "" || phone.length !== 10, message: "phonenumber" },
             { condition: name === "", message: "name" },
             { condition: context === "", message: "context" },
+            { condition: role === "", message: "role" },
         ]
 
         const invalidation = validations.find((validation) => validation.condition);
@@ -60,9 +62,10 @@ const ContactFormController = ({ page }) => {
 
     return(
         <ContactForm
-            kvkNummer={kvkNummer} setkvkNummer={setkvkNummer}
+            bedrijfsNaam={bedrijfsNaam} setBedrijfsNaam={setbedrijfsNaam}
             email={email} setEmail={setEmail}
             phone={phone} setPhone={setPhone}
+            role={role} setRole={setRole}
             name={name} setName={setName}
             context={context} setContext={setContext}
             submitForm={handleSubmitForm}
