@@ -15,7 +15,6 @@ const ActionBar = ({ servicesCategoryData }) => {
                 <p className="actionbar-filter">Filter</p>
             </Card>
         </>
-
     )
 }
 export default ActionBar;

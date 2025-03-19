@@ -3,9 +3,8 @@ import config from "/config/config";
 const API_BASE_URL = config.API_BASE_URL;
 
 const getCategories = async () => {
-
     try {
-        const data = await fetch("http://localhost:8080/categories/");
+        const data = await fetch(`${API_BASE_URL}/categories/`);
         return await data.json();
     } catch (error) {
         return error
