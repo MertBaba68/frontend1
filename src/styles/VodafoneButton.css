@@ -1,0 +1,24 @@
+.vodafonebutton-container {
+    justify-content: center;
+    align-items: center;
+}
+
+.vodafonebutton-button {
+    background-color: var(--color_primary);
+    align-items: center;
+    border-radius: 6px;
+    box-sizing: border-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-family: Vodafone, Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    height: 3rem;
+    justify-content: center;
+    line-height: 1.25;
+    padding: 0 1rem;
+    border: none;
+    width: 100px;
+    color: white;
+    cursor: pointer;
+}

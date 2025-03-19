@@ -1,6 +1,7 @@
 import Services from "@/app/view/components/Services";
 import ActionBar from "@/app/view/components/ActionBar";
 import "/src/styles/ServicePage.css"
+import ContactFormController from "@/app/controller/ContactFormController";
 
 const ServicePage = ({ categoryData }) => {
     return (
@@ -16,7 +17,7 @@ const ServicePage = ({ categoryData }) => {
                 <Services servicesCategory={categoryData} />
             </div>
             <div className="service-page-contact-container">
-                <p>Contact soon...</p>
+                <ContactFormController page="Servicepage" />
             </div>
         </div>
     );

@@ -13,7 +13,12 @@ const getCategories = async () => {
 
 export const getCategoryByName = async (categoryName) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/categories/name/${categoryName}`)
+        const response = await fetch(`${API_BASE_URL}/categories/name/${categoryName}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
 
         if (!response.ok) {
             if (response.status === 404) {

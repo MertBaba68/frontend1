@@ -1,19 +1,5 @@
-.actionbar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 300px;
-    background-color: var(--card-background);
-    padding: 20px;
-    margin: 0 auto;
-    border-radius: 0.5rem;
-}
-
 .actionbar-heading {
-    font-size: 4.5rem;
-    margin-bottom: 10px;
+    font-size: 4rem;
 }
 
 .actionbar-description {
