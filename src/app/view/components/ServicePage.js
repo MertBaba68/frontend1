@@ -10,9 +10,8 @@ const ServicePage = ({ serviceData }) => {
         <>
             <div className="background-image-container">
                 <div className="background-image-text" >
-                    <h1 className="background-image-header" >Slimme kantooroplossing</h1>
-                    <p className="background-image-description" >Slimme kantoorsensoren, schermen en applicaties.
-                        Gebruik werkplekken effectiever en ondersteun medewerkers in dagelijkse werkzaamheden</p>
+                    <h1 className="background-image-header" >{serviceData.name}</h1>
+                    <p className="background-image-description" >{serviceData.description}</p>
                 </div>
             </div>
 
