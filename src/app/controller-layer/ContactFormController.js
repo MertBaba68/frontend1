@@ -1,6 +1,6 @@
 import ContactForm from "@/app/view/components/ContactForm";
 import {useState} from "react";
-import {postContact} from "@/app/service/ContactService";
+import {postContact} from "@/app/service-layer/ContactService";
 
 const ContactFormController = ({ page }) => {
     const [companyName, setCompanyName] = useState("");

@@ -1,6 +1,8 @@
 import "/src/styles/Service.css"
+import { useRouter } from "next/navigation";
 
 const Service = ({ serviceData }) => {
+    const router = useRouter();
 
     if (!serviceData) {
         return <p>Loading service data...</p>;
@@ -15,9 +17,13 @@ const Service = ({ serviceData }) => {
         return images[randomIndex];
     }
 
+    const handleClick = () => {
+        router.push(`/service/${serviceData.id}`)
+    }
+
     return (
         <>
-            <div className="service-container">
+            <div onClick={handleClick} className="service-container">
                 <img className="service-image" alt="Image of service"
                      src={getRandomImage()}/>
 
