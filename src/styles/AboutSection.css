@@ -1,0 +1,35 @@
+.about-section-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    padding: 5px;
+    font-size: 1.125rem;
+}
+
+.about-section-alinea {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.125rem;
+    line-height: 1.35;
+    margin-bottom: 1rem;
+    width: 100%;
+
+}
+
+.about-section-header {
+    margin: 0.5rem 0 1.25rem 0;
+}
+
+.about-section-description {
+    font-size: 1.125rem;
+    text-align: left;
+    max-width: 95%;
+}
+
+.about-section-container img {
+    max-width: 40%;
+    height: auto;
+    border-radius: 0.5rem;
+}

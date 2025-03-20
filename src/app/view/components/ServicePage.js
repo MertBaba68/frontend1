@@ -1,18 +1,30 @@
 import Page from "@/app/view/components/dumb/Page";
 import PageContainer from "@/app/view/components/dumb/PageContainer";
 import "/src/styles/ServicePage.css"
+import AboutSection from "@/app/view/components/AboutSection";
+import Card from "@/app/view/components/dumb/Card";
+import ContactFormController from "@/app/controller-layer/ContactFormController";
 
 const ServicePage = ({ serviceData }) => {
     return(
-        <Page>
-            <PageContainer>
-                <div className="background-image-container">
-                    <img className="background-image-image" src={"/slim_kantoor.png"} alt="Background image for service page"/>
+        <>
+            {/*<div className="container">*/}
+            {/*    <div className="background-image-container"></div>*/}
 
-                </div>
-            </PageContainer>
-        </Page>
+            {/*</div>*/}
 
+            <Page>
+                <PageContainer>
+                    <Card className="service-page-about-container" >
+                        <AboutSection header="Payoff:" description={serviceData.description} img={"/utility industry (1).png"} />
+                        <AboutSection header="Waardepropisitie" description={serviceData.description}  />
+                        </Card>
+                </PageContainer>
+
+                <ContactFormController/>
+
+            </Page>
+        </>
     )
 }
 

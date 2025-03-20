@@ -1,7 +1,6 @@
-
-
-.background-image-image {
+.background-image-container {     background-image: url('/slim_kantoor.png');
+    height: 40%;
     width: 100%;
-    object-fit: cover;
+    background-attachment: fixed
 }
 
