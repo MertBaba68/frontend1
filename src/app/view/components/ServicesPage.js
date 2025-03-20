@@ -1,6 +1,6 @@
 import Services from "@/app/view/components/Services";
 import ActionBar from "@/app/view/components/ActionBar";
-import "/src/styles/ServicePage.css"
+import "/src/styles/ServicesPage.css"
 import ContactFormController from "@/app/controller-layer/ContactFormController";
 import Page from "@/app/view/components/dumb/Page";
 import PageContainer from "@/app/view/components/dumb/PageContainer";
