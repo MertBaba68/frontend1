@@ -4,7 +4,7 @@ const AboutSection = ({ header, description, img }) => {
     return (
         <div className="about-section-container">
             <div className="about-section-alinea">
-                <b className="about-section-header" >{header}</b>
+                <b className="about-section-header" >{header}:</b>
                 <p className="about-section-description" >
                     Maak briljante werkplekbeslissingen
                     Haal nog meer uit je kantoorruimtes. Nimway van Sony is een complete suite van

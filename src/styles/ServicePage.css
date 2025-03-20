@@ -1,6 +1,40 @@
-.background-image-container {     background-image: url('/slim_kantoor.png');
-    height: 40%;
+
+.background-image-container {
     width: 100%;
-    background-attachment: fixed
+    height: 350px;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    background-image: url("/slim_kantoor.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    margin: 0 0 1.5rem 0;
 }
+
+.background-image-text {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 2;
+    text-align: left;
+    padding: 0 0 0 25% !important;
+    line-height: 3rem;
+    width: 50%;
+}
+
+.background-image-header {
+    line-height: 5.5rem;
+    font-size: 4rem;
+}
+
+.background-image-description {
+    font-size: 1.25rem;
+    text-align: left;
+}
+
+
 

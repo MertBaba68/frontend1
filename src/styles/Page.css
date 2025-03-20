@@ -16,10 +16,6 @@
     background-color: white;
 }
 
-.page-container-container > .background-image-container {
-    max-height: 100%;
-}
-
 .page-container > * {
     max-width: 900px;
     margin: 0 auto;
