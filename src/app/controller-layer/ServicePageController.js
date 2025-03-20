@@ -30,8 +30,22 @@ const ServicePageController = () => {
         fetchService();
     },[serviceId]);
 
+    console.log(serviceData);
+
     return(
-        <p>{serviceId}</p>
+        <>
+            {serviceData ? (
+                    <>
+                        <p>{serviceId}</p>
+                        <p>{serviceData.name}</p>
+                    </>
+                ) : (
+                    <p>Loading...</p>
+            )}
+
+
+        </>
+
     )
 }
 
