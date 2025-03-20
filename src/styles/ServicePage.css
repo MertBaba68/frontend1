@@ -3,7 +3,6 @@
     width: 100%;
     height: 500px;
     display: flex;
-    /*justify-content: center;*/
     align-items: center;
     background-image: url("/slim_kantoor.png");
     background-repeat: no-repeat;
