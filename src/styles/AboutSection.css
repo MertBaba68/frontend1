@@ -3,8 +3,11 @@
     flex-direction: row;
     align-items: flex-start;
     width: 100%;
-    padding: 5px;
+    padding: 10px;
+    margin: 10px 0;
     font-size: 1.125rem;
+    gap: 3rem;
+
 }
 
 .about-section-alinea {
@@ -12,24 +15,61 @@
     flex-direction: column;
     align-items: flex-start;
     font-size: 1.125rem;
-    line-height: 1.35;
-    margin-bottom: 1rem;
-    width: 100%;
-
+    line-height: 1.5;
+    flex: 1;
+    color: #343a40;
 }
 
 .about-section-header {
-    margin: 0.5rem 0 1.25rem 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: black;
 }
 
 .about-section-description {
     font-size: 1.125rem;
+    color: #495057;
     text-align: left;
-    max-width: 95%;
+    max-width: 90%;
 }
 
-.about-section-container img {
-    max-width: 40%;
+.about-section-list {
+    margin: 1rem 0;
+    list-style-type: none;
+}
+
+.about-section-list-item {
+    font-size: 1.125rem;
+    color: #495057;
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.about-section-list-item::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+}
+
+
+.about-section-img-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-section-img-container:empty {
+    display: none;
+}
+
+.about-section-img {
+    width: 100%;
+    max-width: 300px;
     height: auto;
-    border-radius: 0.5rem;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
