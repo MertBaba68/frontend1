@@ -8,14 +8,7 @@ const Service = ({ serviceData }) => {
         return <p>Loading service data...</p>;
     }
 
-    const getRandomImage = () => {
-        const images = [
-            "/tracking industry (1).png",
-            "/utility industry (1).png"
-        ];
-        const randomIndex = Math.floor(Math.random() * images.length);
-        return images[randomIndex];
-    }
+    console.log(serviceData);
 
     const handleClick = () => {
         router.push(`/service/${serviceData.id}`)
@@ -25,7 +18,7 @@ const Service = ({ serviceData }) => {
         <>
             <div onClick={handleClick} className="service-container">
                 <img className="service-image" alt="Image of service"
-                     src={getRandomImage()}/>
+                     src={serviceData.headerImage}/>
 
                 {/*<img className="service-image" alt="Image of service"*/}
                 {/*     src={"data:image/png;base64," + serviceData.headerImage}/>*/}
