@@ -13,7 +13,7 @@ export const getService = async (serviceId) => {
 
         if (!response.ok) {
             if (response.status === 404) {
-                throw new Error(`Category "${serviceId}" not found.`);
+                throw new Error(`Service "${serviceId}" not found.`);
             }
             
             throw new Error(`Failed to fetch service: ${response.statusText}`);

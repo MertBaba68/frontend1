@@ -8,8 +8,6 @@ const Service = ({ serviceData }) => {
         return <p>Loading service data...</p>;
     }
 
-    console.log(serviceData);
-
     const handleClick = () => {
         router.push(`/service/${serviceData.id}`)
     }
