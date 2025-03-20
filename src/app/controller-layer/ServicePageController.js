@@ -3,6 +3,8 @@
 import {useParams} from "next/navigation";
 import {useEffect, useState} from "react";
 import {getService} from "@/app/service-layer/ServiceService";
+import StatusPage from "@/app/view/StatusPage";
+import ServicePage from "@/app/view/components/ServicePage";
 
 const ServicePageController = () => {
     const { serviceId } = useParams();
@@ -11,8 +13,6 @@ const ServicePageController = () => {
     const [serviceData, setServiceData] = useState(null);
 
     useEffect(() => {
-        console.log(serviceId);
-
         if (!serviceId) return;
 
         const fetchService = async () => {
@@ -30,23 +30,19 @@ const ServicePageController = () => {
         fetchService();
     },[serviceId]);
 
-    console.log(serviceData);
+    useEffect(() => {
+        if (serviceData) {
+            document.title = `Vodafone Partner for Progress | ${serviceData.name}`;
+        }
+    },[serviceData])
 
-    return(
-        <>
-            {serviceData ? (
-                    <>
-                        <p>{serviceId}</p>
-                        <p>{serviceData.name}</p>
-                    </>
-                ) : (
-                    <p>Loading...</p>
-            )}
-
-
-        </>
-
-    )
+    return error ? (
+        <StatusPage type="error" status={error.message} />
+    ) : !serviceData ? (
+        <StatusPage type="info" status="Loading..." />
+    ) : (
+        <ServicePage serviceData={serviceData} />
+    );
 }
 
 export default ServicePageController;
