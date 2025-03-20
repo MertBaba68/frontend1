@@ -43,9 +43,11 @@ const ServicePage = ({ serviceData }) => {
     };
 
     const service = {
-        serviceData,
+        ...serviceData,
         ...dummy
     }
+
+    console.log(service.name)
 
     return(
         <>
@@ -59,23 +61,21 @@ const ServicePage = ({ serviceData }) => {
 
             <Page>
                 <PageContainer>
-                <Card className="service-page-about-container" >
-                    {
-                        dummy.about.map((section, index) => {
-                            return <AboutSection
-                                key={index}
-                                header={section.title}
-                                description={section.description}
-                                img={section.img}
-                                list={section.list}
+                    <Card className="service-page-about-container" >
+                        {
+                            dummy.about.map((section, index) => {
+                                return <AboutSection
+                                    key={index}
+                                    header={section.title}
+                                    description={section.description}
+                                    img={section.img}
+                                    list={section.list}
 
-                            />
+                                />
 
-                        })
-                    }
-                        {/*<AboutSection header="Payoff" description={serviceData.description} img={"/utility industry (1).png"} />*/}
-                        {/*<AboutSection header="Waardepropisitie" description={serviceData.description}  />*/}
-                        </Card>
+                            })
+                        }
+                    </Card>
                 </PageContainer>
 
                 <ContactFormController/>
