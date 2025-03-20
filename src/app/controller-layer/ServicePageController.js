@@ -4,6 +4,7 @@ import {useParams} from "next/navigation";
 import {useEffect, useState} from "react";
 import {getService} from "@/app/service-layer/ServiceService";
 import StatusPage from "@/app/view/StatusPage";
+import ServicesPage from "@/app/view/components/ServicesPage";
 import ServicePage from "@/app/view/components/ServicePage";
 
 const ServicePageController = () => {

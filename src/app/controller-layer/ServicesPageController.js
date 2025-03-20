@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getCategoryByName } from "@/app/service-layer/CategoryService";
-import ServicesPage from "@/app/view/components/ServicePage";
+import ServicesPage from "@/app/view/components/ServicesPage";
 import { useParams } from "next/navigation";
 import StatusPage from "@/app/view/StatusPage";
 
