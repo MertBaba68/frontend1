@@ -47,8 +47,6 @@ const ServicePage = ({ serviceData }) => {
         ...dummy
     }
 
-    console.log(service.name)
-
     return(
         <>
             <div className="background-image-container">
@@ -57,7 +55,6 @@ const ServicePage = ({ serviceData }) => {
                     <p className="background-image-description" >{service.description}</p>
                 </div>
             </div>
-
 
             <Page>
                 <PageContainer>
