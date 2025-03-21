@@ -25,7 +25,7 @@ const AboutSection = ({ header, description, img, list }) => {
 
             <div  className="about-section-img-container">
                 {img && (
-                    <img className="about-section-img" src={img} alt={header || "About section image"}/>
+                    <img className="about-section-img" src={"data:image/png;base64,"+img} alt={header || "About section image"}/>
                 )}
             </div>
 

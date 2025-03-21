@@ -15,11 +15,7 @@ const Service = ({ serviceData }) => {
     return (
         <>
             <div onClick={handleClick} className="service-container">
-                <img className="service-image" alt="Image of service"
-                     src={serviceData.headerImage}/>
-
-                {/*<img className="service-image" alt="Image of service"*/}
-                {/*     src={"data:image/png;base64," + serviceData.headerImage}/>*/}
+                <img className="service-image" alt="Image of service" src={"data:image/png;base64," + serviceData.headerImage}/>
                 <h2 className="service-title">{serviceData.name}</h2>
                 <p className="service-description">{serviceData.description}</p>
             </div>
