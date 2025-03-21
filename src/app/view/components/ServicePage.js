@@ -1,8 +1,8 @@
-import Page from "@/app/view/components/dumb/Page";
-import PageContainer from "@/app/view/components/dumb/PageContainer";
+import Page from "@/app/view/components/static/Page";
+import PageContainer from "@/app/view/components/static/PageContainer";
 import "/src/styles/ServicePage.css";
 import AboutSection from "@/app/view/components/AboutSection";
-import Card from "@/app/view/components/dumb/Card";
+import Card from "@/app/view/components/static/Card";
 import ContactFormController from "@/app/controller-layer/ContactFormController";
 
 const ServicePage = ({ serviceData }) => {

@@ -2,8 +2,8 @@ import Services from "@/app/view/components/Services";
 import ActionBar from "@/app/view/components/ActionBar";
 import "/src/styles/ServicesPage.css"
 import ContactFormController from "@/app/controller-layer/ContactFormController";
-import Page from "@/app/view/components/dumb/Page";
-import PageContainer from "@/app/view/components/dumb/PageContainer";
+import Page from "@/app/view/components/static/Page";
+import PageContainer from "@/app/view/components/static/PageContainer";
 
 const ServicesPage = ({ categoryData }) => {
     return (
