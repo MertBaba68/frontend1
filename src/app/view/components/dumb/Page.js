@@ -7,7 +7,6 @@ const Page = ({ children }) => {
                 {children}
             </div>
         </div>
-
     )
 }
 
