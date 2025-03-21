@@ -1,43 +1,43 @@
-.service-page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+
+.background-image-container {
     width: 100%;
-    min-height: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0)), url("https://vodafoneziggo.scene7.com/is/image/vodafoneziggo/Ontwerp%20zonder%20titel?fmt=webp-alpha&qlt=100,0&bfc=off&wid=2480&fit=constrain");
+    height: 500px;
+    display: flex;
+    align-items: center;
+    background-image: url("/slim_kantoor.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-color: white;
+    z-index: 1;
+    margin: 0 0 1.5rem 0;
 }
 
-.service-page-header-to-be-made {
-    grid-row: 1;
-    height: 20px;
-    width: 100%;
+.background-image-text {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 2;
+    text-align: left;
+    padding: 0 0 0 25% !important;
+    line-height: 3rem;
+    width: 50%;
 }
 
-.service-page-actionbar-container {
-    grid-row: 2;
-    width: 100%;
-    padding: 0 1rem 1.5rem 1rem;
+.background-image-header {
+    line-height: 5.5rem;
+    font-size: 4rem;
 }
 
-.service-page-services-container {
-    grid-row: 3;
-    width: 100%;
-    padding: 0 1rem 1.5rem 1rem;
+.background-image-description {
+    font-size: 1.5rem;
+    text-align: left;
 }
 
-.service-page-contact-container {
-    grid-row: 4;
-    width: 100%;
-    padding: 0 1rem 1.5rem 1rem;
+.background-image-header, .background-image-description {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.service-page-container > * {
-    max-width: 900px;
-    margin: 0 auto;
-}
+
 

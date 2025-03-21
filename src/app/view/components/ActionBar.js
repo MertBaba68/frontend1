@@ -1,5 +1,5 @@
 import "/src/styles/ActionBar.css"
-import Card from "@/app/view/components/Card";
+import Card from "@/app/view/components/static/Card";
 
 const ActionBar = ({ servicesCategoryData }) => {
     return (

@@ -1,5 +1,5 @@
-import ServicePageController from "@/app/controller/ServicePageController";
+import ServicesPageController from "@/app/controller-layer/ServicesPageController";
 
 export default function Home() {
-    return <ServicePageController categoryName="Agriculture" />;
+    return <ServicesPageController categoryName="Agriculture" />;
 }

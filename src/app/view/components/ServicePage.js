@@ -1,25 +1,45 @@
-import Services from "@/app/view/components/Services";
-import ActionBar from "@/app/view/components/ActionBar";
-import "/src/styles/ServicePage.css"
-import ContactFormController from "@/app/controller/ContactFormController";
+import Page from "@/app/view/components/static/Page";
+import PageContainer from "@/app/view/components/static/PageContainer";
+import "/src/styles/ServicePage.css";
+import AboutSection from "@/app/view/components/AboutSection";
+import Card from "@/app/view/components/static/Card";
+import ContactFormController from "@/app/controller-layer/ContactFormController";
 
-const ServicePage = ({ categoryData }) => {
+const ServicePage = ({ serviceData }) => {
     return (
-        <div className="service-page-container">
-            <div className="service-page-header-to-be-made" >
+        <>
+            <div
+                className="background-image-container"
+                style={{
+                    backgroundImage: `url(data:image/png;base64,${serviceData.headerImage})`
+                }}
+            >
+                <div className="background-image-text">
+                    <h1 className="background-image-header">{serviceData.name}</h1>
+                    <p className="background-image-description">
+                        {serviceData.description}
+                    </p>
+                </div>
+            </div>
 
-            </div>
-            <div className="service-page-actionbar-container">
-                <ActionBar servicesCategoryData={categoryData} />
-            </div>
+            <Page>
+                <PageContainer>
+                    <Card className="service-page-about-container">
+                        {serviceData.about.map((section, index) => (
+                            <AboutSection
+                                key={index}
+                                header={section.title}
+                                description={section.description}
+                                img={section.image}
+                                list={section.list}
+                            />
+                        ))}
+                    </Card>
+                </PageContainer>
 
-            <div className="service-page-services-container">
-                <Services servicesCategory={categoryData} />
-            </div>
-            <div className="service-page-contact-container">
-                <ContactFormController page="Servicepage" />
-            </div>
-        </div>
+                <ContactFormController />
+            </Page>
+        </>
     );
 };
 

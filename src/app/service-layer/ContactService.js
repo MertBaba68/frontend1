@@ -9,8 +9,8 @@ const formatContact = (formData) => {
 
     if (url.startsWith("/categories/")) {
         location = url.split("/categories/")[1];
-    } else if (url.startsWith("/services/")) {
-        location = url.split("/services/")[1];
+    } else if (url.startsWith("/service/")) {
+        location = url.split("/service/")[1];
     }
 
     return {

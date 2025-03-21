@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getCategoryByName } from "@/app/service/CategoryService";
-import ServicePage from "@/app/view/components/ServicePage";
+import { getCategoryByName } from "@/app/service-layer/CategoryService";
+import ServicesPage from "@/app/view/components/ServicesPage";
 import { useParams } from "next/navigation";
 import StatusPage from "@/app/view/StatusPage";
 
-const ServicePageController = ({ categoryName: propCategory }) => {
+const ServicesPageController = ({ categoryName: propCategory }) => {
     const { categoryName: urlCategory } = useParams();
     const [error, setError] = useState(null);
     const [categoryData, setCategoryData] = useState(null);
@@ -41,8 +41,8 @@ const ServicePageController = ({ categoryName: propCategory }) => {
     ) : !categoryData ? (
         <StatusPage type="info" status="Loading..." />
     ) : (
-        <ServicePage categoryData={categoryData} />
+        <ServicesPage categoryData={categoryData} />
     );
 };
 
-export default ServicePageController;
+export default ServicesPageController;
