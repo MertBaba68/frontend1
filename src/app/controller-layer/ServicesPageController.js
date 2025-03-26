@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getCategoryByName } from "@/app/service-layer/CategoryService";
+import {getCategoryByName, getCategoryBySearch} from "@/app/service-layer/CategoryService";
 import ServicesPage from "@/app/view/components/ServicesPage";
 import { useParams } from "next/navigation";
 import StatusPage from "@/app/view/StatusPage";
@@ -11,24 +11,45 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
     const [error, setError] = useState(null);
     const [categoryData, setCategoryData] = useState(null);
     const categoryToFetch = propCategory || urlCategory; // use prop wich has a value
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const handleSearch = (term) => {
+        setSearchTerm(term);
+    }
+
+    useEffect(() => {
+        fetchCategoryBySearch()
+    },[searchTerm])
+
+    const fetchCategoryBySearch = async () => {
+        try {
+            setError(null);
+            const data = await getCategoryBySearch(categoryToFetch, searchTerm);
+            setCategoryData(data);
+        }  catch (error) {
+            console.error("Error fetching category with onSearch term: " + categoryToFetch, error);
+            setError(error);
+            setCategoryData(null);
+        }
+    }
 
     useEffect(() => {
         if (!categoryToFetch) return;
 
-        const fetchSelectedCategory = async () => {
-            try {
-                setError(null);
-                const data = await getCategoryByName(categoryToFetch);
-                setCategoryData(data);
-            } catch (error) {
-                console.error("Error fetching category: " + categoryToFetch, error);
-                setError(error);
-                setCategoryData(null);
-            }
-        };
-
         fetchSelectedCategory();
     }, [categoryToFetch]);
+
+    const fetchSelectedCategory = async () => {
+        try {
+            setError(null);
+            const data = await getCategoryByName(categoryToFetch);
+            setCategoryData(data);
+        } catch (error) {
+            console.error("Error fetching category: " + categoryToFetch, error);
+            setError(error);
+            setCategoryData(null);
+        }
+    };
 
     useEffect(() => {
         if (categoryData) {
@@ -41,7 +62,7 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
     ) : !categoryData ? (
         <StatusPage type="info" status="Loading..." />
     ) : (
-        <ServicesPage categoryData={categoryData} />
+        <ServicesPage categoryData={categoryData} onSearch={handleSearch} />
     );
 };
 
