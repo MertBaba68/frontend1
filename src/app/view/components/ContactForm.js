@@ -1,6 +1,7 @@
 import "/src/styles/ContactForm.css"
 import Card from "@/app/view/components/static/Card";
 import {VodafoneButton} from "@/app/view/components/VodafoneButton";
+import {InputField} from "@/app/view/components/InputField";
 
 const ContactForm = ({
     companyName, setCompanyName,
@@ -36,42 +37,55 @@ const ContactForm = ({
                        value={companyName}
                 />
 
-                <label htmlFor="name">Naam</label>
-                <input id="name" className="contactform-input-name" type="text"
-                       onChange={(e) => setName(e.target.value)}
-                       value={name}
+                <InputField
+                    label="Naam"
+                    id="name"
+                    type="text"
+                    typeOfInput="input"
+                    name="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                 />
 
-                <label htmlFor="role">Rol binnen bedrijf</label>
-                <input id="role" className="contactform-input-role" type="text"
-                       onChange={(e) => setRole(e.target.value)}
-                       value={role}
+                <InputField
+                    label="Rol binnen bedrijf"
+                    id="role"
+                    type="text"
+                    typeOfInput="input"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
                 />
 
-                <label htmlFor="email">E-mail</label>
-                <input id="email" className="contactform-input-email" type="email"
-                       onChange={((e) => setEmail(e.target.value))}
-                       value={email}
+                <InputField
+                    label="Email"
+                    id="role"
+                    type="email"
+                    typeOfInput="input"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                 />
 
-                <label htmlFor="phone">Telefoonnummer</label>
-                <input id="phone" className="contactform-input-phone" type="text"
-                       onChange={(e) => {
-                           const inputValue = e.target.value;
-
-                           if (inputValue.length > 10) return
-                           const numericPart = inputValue.replace(/\D/g, "");
-                           setPhone(numericPart);
-
-                       }}
-                       value={phone}
+                <InputField
+                    label="Telefoonnummer"
+                    id="phone"
+                    type="text"
+                    typeOfInput="input"
+                    value={phone}
+                    onChange={(e) => {
+                        const inputValue = e.target.value;
+                        if (inputValue.length > 10) return
+                        const numericPart = inputValue.replace(/\D/g, "");
+                        setPhone(numericPart);
+                    }}
                 />
 
-                <label htmlFor="message">Bericht</label>
-                <textarea id="message" className="contactform-textarea-context"
-                          onChange={(e) => setContext(e.target.value)}
-                          value={context}
-                ></textarea>
+                <InputField
+                    label="Bericht"
+                    id="message"
+                    typeOfInput="textarea"
+                    value={context}
+                    onChange={(e) => setContext(e.target.value)}
+                />
 
                 <VodafoneButton type="submit">Verzend</VodafoneButton>
             </form>
