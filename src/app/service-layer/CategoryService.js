@@ -37,7 +37,7 @@ export const getCategoryByName = async (categoryName) => {
 export const getCategoryBySearch = async (categoryName, searchTerm) => {
     try {
         const response = await fetch(`${API_BASE_URL}/categories/name/${categoryName}`, {
-            method: "GET",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -48,9 +48,9 @@ export const getCategoryBySearch = async (categoryName, searchTerm) => {
 
         if (!response.ok) {
             if (response.status === 404) {
-                throw new Error(`Category "${categoryName}" not found.`);
+                throw new Error(`Category "${categoryName}" not found on search.`);
             }
-            throw new Error(`Failed to fetch category: ${response.statusText}`);
+            throw new Error(`Failed to fetch category on search: ${response.statusText}`);
         }
 
         return await response.json();

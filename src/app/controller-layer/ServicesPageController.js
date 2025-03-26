@@ -26,9 +26,10 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
     }
 
     useEffect(() => {
-        if (!searchTerm) {
+        if (!searchTerm || searchTerm === "" || searchTerm === null) {
             setSearchResult(null);
             setServicesError(null);
+            return
         }
 
         const fetchCategoryBySearch = async () => {

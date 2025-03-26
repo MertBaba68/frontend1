@@ -9,6 +9,7 @@ const ServicesPage = ({
                           categoryData,
                           onSearch,
     servicesError,
+    isSearching
 }) => {
     return (
         <Page>
@@ -20,7 +21,11 @@ const ServicesPage = ({
             </PageContainer>
 
             <PageContainer>
-                <Services servicesCategory={categoryData} servicesError={servicesError} />
+                <Services
+                    servicesCategory={categoryData}
+                    isSearching={isSearching}
+                    servicesError={servicesError}
+                />
             </PageContainer>
 
             <PageContainer>

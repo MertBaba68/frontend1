@@ -8,10 +8,12 @@ const ActionBar = ({
     submitForm,
                    }) => {
 
+    console.log(title)
+
     return (
         <>
             <Card center={true} >
-                <h1 className="actionbar-heading">{title.name}</h1>
+                <h1 className="actionbar-heading">{title}</h1>
                 <p className="actionbar-description">Zoek hier naar uw toekomstige dienst</p>
                 <form>
                     <InputField
