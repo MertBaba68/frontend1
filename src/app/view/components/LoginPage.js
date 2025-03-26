@@ -2,8 +2,9 @@ import Page from "@/app/view/components/static/Page";
 import PageContainer from "@/app/view/components/static/PageContainer";
 import "/src/styles/Login.css";
 import Card from "@/app/view/components/static/Card";
+import {VodafoneButton} from "@/app/view/components/VodafoneButton";
 
-const Login = ({email, setEmail, password, setPassword, incorrect, login}) => {
+const LoginPage = ({email, setEmail, password, setPassword, incorrect, login}) => {
     const onEmailInput = (e) => {
         setEmail(e.target.value);
     };
@@ -18,12 +19,22 @@ const Login = ({email, setEmail, password, setPassword, incorrect, login}) => {
         }
     }
 
+    const handleFormSend = (e) => {
+        e.preventDefault();
+
+        login();
+    }
     return (
         <>
             <Page>
                 <PageContainer>
-                    <Card>
-                        <label htmlFor="email">Email</label>
+                    <Card center="true" small="true">
+                    <h1 className="header centered">Inloggen</h1>
+                    <form class="loginForm" onSubmit={handleFormSend}>
+                    <label htmlFor="email">Email</label>
+
+                    <br></br>
+
                         <input 
                             id="email" 
                             type="text" 
@@ -33,7 +44,12 @@ const Login = ({email, setEmail, password, setPassword, incorrect, login}) => {
                             onKeyDown={checkEnter}
                         />
 
+                        <br></br>
+
                         <label htmlFor="password">Wachtwoord</label>
+
+                        <br></br>
+
                         <input 
                             id="password" 
                             type="password" 
@@ -42,18 +58,14 @@ const Login = ({email, setEmail, password, setPassword, incorrect, login}) => {
                             onChange={onPasswordInput}
                             onKeyDown={checkEnter}
                         />
-                        {
-                            incorrect && (
-                                <p>Incorrect combinatie van email en wachtwoord</p>
-                            )
-                        }
 
-                        <button 
-                            onClick={login}
-                            onKeyDown={checkEnter}
-                        >
-                        Login
-                        </button>
+                        <br></br>
+
+                        <VodafoneButton type = "submit">Login</VodafoneButton>
+                    </form>
+
+                    {incorrect && (<p className="error">Incorrect combinatie van email en wachtwoord</p>)}
+
                     </Card>
                 </PageContainer>
             </Page>
@@ -61,4 +73,4 @@ const Login = ({email, setEmail, password, setPassword, incorrect, login}) => {
     );
 };
 
-export default Login;
+export default LoginPage;
