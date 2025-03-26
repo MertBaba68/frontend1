@@ -1,18 +1,32 @@
 import "/src/styles/ActionBar.css"
 import Card from "@/app/view/components/static/Card";
+import {InputField} from "@/app/view/components/InputField";
 
-const ActionBar = ({ servicesCategoryData }) => {
+const ActionBar = ({
+    title,
+    searchTerm, setSearchTerm,
+    submitForm,
+                   }) => {
+
+    const handleSubmitForm = (e) => {
+        e.preventDefault();
+        submitForm()
+    }
+
     return (
         <>
             <Card center={true} >
-                <h1 className="actionbar-heading">{servicesCategoryData.name}</h1>
+                <h1 className="actionbar-heading">{title.name}</h1>
                 <p className="actionbar-description">Zoek hier naar uw toekomstige dienst</p>
-                <input
-                    className="actionbar-input"
+                <InputField
+                    label="Zoeken"
+                    id="searchTerm"
                     type="text"
-                    placeholder="Zoeken"
+                    typeOfInput="input"
+                    value={searchTerm}
+                    onChange={(e) => {setSearchTerm(e.target.value)}}
+                    onEnter={handleSubmitForm}
                 />
-                <p className="actionbar-filter">Filter</p>
             </Card>
         </>
     )

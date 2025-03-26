@@ -4,6 +4,7 @@ import "/src/styles/ServicesPage.css"
 import ContactFormController from "@/app/controller-layer/ContactFormController";
 import Page from "@/app/view/components/static/Page";
 import PageContainer from "@/app/view/components/static/PageContainer";
+import {ActionBarController} from "@/app/controller-layer/ActionBarController";
 
 const ServicesPage = ({ categoryData }) => {
     return (
@@ -12,7 +13,7 @@ const ServicesPage = ({ categoryData }) => {
                 {/*Header to be expected*/}
             </div>
             <PageContainer>
-                <ActionBar servicesCategoryData={categoryData} />
+                <ActionBarController title={categoryData.name} />
             </PageContainer>
 
             <PageContainer>

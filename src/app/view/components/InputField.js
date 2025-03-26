@@ -1,8 +1,8 @@
 import "/src/styles/InputField.css"
 
-export const InputField = ({ type, id, label, name, value, onChange, typeOfInput }) => {
+export const InputField = ({ type, id, label, name, value, onChange, typeOfInput, onEnter }) => {
     return (
-        <div className="custom-inputfield-container">
+        <div>
             <label htmlFor={id}>{label}</label>
 
             {typeOfInput === "input" && (
@@ -12,6 +12,10 @@ export const InputField = ({ type, id, label, name, value, onChange, typeOfInput
                     name={name}
                     value={value}
                     onChange={onChange}
+                    onKeyDown={e => {
+                        if (e.key === "Enter") {onEnter()}
+                        }
+                    }
                 />
             )}
 
@@ -21,10 +25,12 @@ export const InputField = ({ type, id, label, name, value, onChange, typeOfInput
                     name={name}
                     value={value}
                     onChange={onChange}
+                    onKeyDown={e => {
+                        if (e.key === "Enter") {onEnter()}
+                    }
+                    }
                 ></textarea>
             )}
-
-
         </div>
     )
 }
