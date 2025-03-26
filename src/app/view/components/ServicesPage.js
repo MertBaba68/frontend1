@@ -5,7 +5,11 @@ import Page from "@/app/view/components/static/Page";
 import PageContainer from "@/app/view/components/static/PageContainer";
 import {ActionBarController} from "@/app/controller-layer/ActionBarController";
 
-const ServicesPage = ({ categoryData, onSearch }) => {
+const ServicesPage = ({
+                          categoryData,
+                          onSearch,
+    servicesError,
+}) => {
     return (
         <Page>
             <div className="service-page-header-to-be-made" >
@@ -16,7 +20,7 @@ const ServicesPage = ({ categoryData, onSearch }) => {
             </PageContainer>
 
             <PageContainer>
-                <Services servicesCategory={categoryData} />
+                <Services servicesCategory={categoryData} servicesError={servicesError} />
             </PageContainer>
 
             <PageContainer>

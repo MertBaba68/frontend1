@@ -1,10 +1,14 @@
 import Service from "@/app/view/components/Service";
 import "/src/styles/Services.css"
 
-const Services = ({ servicesCategory }) => {
+const Services = ({ servicesCategory, servicesError }) => {
 
     if (!servicesCategory) {
         return <p>Loading...</p>;
+    }
+
+    if (servicesError) {
+        return <p>{servicesError}</p>
     }
 
     return (
