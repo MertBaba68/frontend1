@@ -8,25 +8,23 @@ const ActionBar = ({
     submitForm,
                    }) => {
 
-    const handleSubmitForm = (e) => {
-        e.preventDefault();
-        submitForm()
-    }
-
     return (
         <>
             <Card center={true} >
                 <h1 className="actionbar-heading">{title.name}</h1>
                 <p className="actionbar-description">Zoek hier naar uw toekomstige dienst</p>
-                <InputField
-                    label="Zoeken"
-                    id="searchTerm"
-                    type="text"
-                    typeOfInput="input"
-                    value={searchTerm}
-                    onChange={(e) => {setSearchTerm(e.target.value)}}
-                    onEnter={handleSubmitForm}
-                />
+                <form>
+                    <InputField
+                        label="Zoeken"
+                        id="searchTerm"
+                        type="text"
+                        typeOfInput="input"
+                        value={searchTerm}
+                        onChange={(e) => {setSearchTerm(e.target.value)}}
+                        onEnter={submitForm}
+                    />
+                </form>
+
             </Card>
         </>
     )

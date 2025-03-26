@@ -13,9 +13,11 @@ export const InputField = ({ type, id, label, name, value, onChange, typeOfInput
                     value={value}
                     onChange={onChange}
                     onKeyDown={e => {
-                        if (e.key === "Enter") {onEnter()}
+                        if (e.key === "Enter") {
+                            e.preventDefault()
+                            onEnter()
                         }
-                    }
+                    }}
                 />
             )}
 
@@ -26,9 +28,11 @@ export const InputField = ({ type, id, label, name, value, onChange, typeOfInput
                     value={value}
                     onChange={onChange}
                     onKeyDown={e => {
-                        if (e.key === "Enter") {onEnter()}
-                    }
-                    }
+                        if (e.key === "Enter") {
+                            e.preventDefault()
+                            onEnter()
+                        }
+                    }}
                 ></textarea>
             )}
         </div>
