@@ -18,6 +18,8 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
     }
 
     useEffect(() => {
+        if (!searchTerm) return
+
         fetchCategoryBySearch()
     },[searchTerm])
 
