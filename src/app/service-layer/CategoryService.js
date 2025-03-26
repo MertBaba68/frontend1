@@ -28,7 +28,6 @@ export const getCategoryByName = async (categoryName, searchTerm = null) => {
     }
 };
 
-// Alternatieve versie als je aparte endpoints wilt houden
 export const getCategoryBySearch = async (categoryName, searchTerm) => {
     return getCategoryByName(categoryName, searchTerm);
 };

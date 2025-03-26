@@ -14,7 +14,6 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
     const [servicesError, setServicesError] = useState(null);
 
     const [categoryData, setCategoryData] = useState(null);
-    // const [searchResult, setSearchResult] = useState(null);
 
     const [isInitialLoading, setIsInitialLoading] = useState(true);
     const [isSearching, setIsSearching] = useState(false);
@@ -41,7 +40,6 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
 
     useEffect(() => {
         if (!searchTerm || searchTerm === "" || searchTerm === null) {
-            setSearchResult(null);
             setServicesError(null);
             return
         }
@@ -51,14 +49,13 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
             setIsSearching(true);
             setServicesError(null);
 
-
             try {
                 const data = await getCategoryBySearch(categoryToFetch, searchTerm);
                 console.log(data)
-                setSearchResult(data);
+                setCategoryData(data);
             }  catch (error) {
                 setServicesError(error);
-                setSearchResult(null);
+                setCategoryData(null);
             } finally {
                 setIsSearching(false);
                 console.log("search")
@@ -66,7 +63,7 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
         }
 
         fetchCategoryBySearch();
-    },[searchTerm])
+    },[searchTerm, categoryToFetch])
 
     useEffect(() => {
         if (!categoryToFetch) return;
@@ -74,7 +71,6 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
         console.log("test")
 
         const fetchSelectedCategory = async () => {
-            setSearchResult(null);
             setIsInitialLoading(true)
             setSearchTerm(null)
 
@@ -105,13 +101,9 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
     if (isInitialLoading) return <StatusPage type="info" status="Loading..." />
     if (!categoryData) return <StatusPage type="info" status="No data available" />
 
-    const displayData = categoryData || searchResult;
-
-    console.log(displayData);
-
     return (
         <ServicesPage
-            categoryData={displayData}
+            categoryData={categoryData}
             onSearch={handleSearch}
             servicesError={servicesError}
             isSearching={isSearching}
