@@ -25,19 +25,6 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
         setSearchTerm(term);
     }
 
-    // useEffect(() => {
-    //     console.log("State update:", {
-    //         error,
-    //         servicesError,
-    //         categoryData,
-    //         searchResult,
-    //         isInitialLoading,
-    //         isSearching,
-    //         searchTerm,
-    //         categoryToFetch
-    //     });
-    // }, [error, servicesError, categoryData, searchResult, isInitialLoading, isSearching, searchTerm, categoryToFetch]);
-
     useEffect(() => {
         if (!searchTerm || searchTerm === "" || searchTerm === null) {
             setServicesError(null);
@@ -84,7 +71,6 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
             } finally {
                 setIsInitialLoading(false);
             }
-
         };
 
         fetchSelectedCategory();
