@@ -23,8 +23,6 @@ const Services = ({
         return <p>No matching search result :(</p>
     }
 
-    console.log(servicesCategory);
-
     if (servicesCategory) return (
         <div className="services-container">
             {servicesCategory.services.map(service => (

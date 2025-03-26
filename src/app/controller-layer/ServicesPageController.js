@@ -51,7 +51,6 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
 
             try {
                 const data = await getCategoryBySearch(categoryToFetch, searchTerm);
-                console.log(data)
                 setCategoryData(data);
             }  catch (error) {
                 setServicesError(error);

@@ -4,7 +4,6 @@ const API_BASE_URL = config.API_BASE_URL;
 
 export const getCategoryByName = async (categoryName, searchTerm = null) => {
     try {
-        console.log(searchTerm);
         const response = await fetch(`${API_BASE_URL}/categories/name/${categoryName}`, {
             method: "POST",
             headers: {
