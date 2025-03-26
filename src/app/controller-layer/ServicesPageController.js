@@ -44,7 +44,6 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
                 setCategoryData(null);
             } finally {
                 setIsSearching(false);
-                console.log("search")
             }
         }
 
@@ -53,8 +52,6 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
 
     useEffect(() => {
         if (!categoryToFetch) return;
-
-        console.log("test")
 
         const fetchSelectedCategory = async () => {
             setIsInitialLoading(true)
