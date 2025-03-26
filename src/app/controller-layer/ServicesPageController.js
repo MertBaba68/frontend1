@@ -14,7 +14,7 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
     const [servicesError, setServicesError] = useState(null);
 
     const [categoryData, setCategoryData] = useState(null);
-    const [searchResult, setSearchResult] = useState(null);
+    // const [searchResult, setSearchResult] = useState(null);
 
     const [isInitialLoading, setIsInitialLoading] = useState(true);
     const [isSearching, setIsSearching] = useState(false);
@@ -26,18 +26,18 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
         setSearchTerm(term);
     }
 
-    useEffect(() => {
-        console.log("State update:", {
-            error,
-            servicesError,
-            categoryData,
-            searchResult,
-            isInitialLoading,
-            isSearching,
-            searchTerm,
-            categoryToFetch
-        });
-    }, [error, servicesError, categoryData, searchResult, isInitialLoading, isSearching, searchTerm, categoryToFetch]);
+    // useEffect(() => {
+    //     console.log("State update:", {
+    //         error,
+    //         servicesError,
+    //         categoryData,
+    //         searchResult,
+    //         isInitialLoading,
+    //         isSearching,
+    //         searchTerm,
+    //         categoryToFetch
+    //     });
+    // }, [error, servicesError, categoryData, searchResult, isInitialLoading, isSearching, searchTerm, categoryToFetch]);
 
     useEffect(() => {
         if (!searchTerm || searchTerm === "" || searchTerm === null) {
@@ -54,6 +54,7 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
 
             try {
                 const data = await getCategoryBySearch(categoryToFetch, searchTerm);
+                console.log(data)
                 setSearchResult(data);
             }  catch (error) {
                 setServicesError(error);
