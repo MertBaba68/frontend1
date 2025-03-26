@@ -26,8 +26,22 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
     }
 
     useEffect(() => {
+        console.log("State updated:", {
+            categoryToFetch,
+            error,
+            servicesError,
+            categoryData,
+            isInitialLoading,
+            isSearching,
+            searchTerm
+        });
+    }, [categoryToFetch, error, servicesError, categoryData, isInitialLoading, isSearching, searchTerm]);
+
+
+    useEffect(() => {
         const fetchCategoryBySearch = async () => {
             setIsSearching(true);
+            setServicesError(null);
 
             try {
                 const data = await getCategoryBySearch(categoryToFetch, searchTerm);
