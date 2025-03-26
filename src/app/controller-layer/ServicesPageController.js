@@ -87,8 +87,6 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
 
     const displayData = searchResult || categoryData;
 
-    console.log(displayData);
-
     return (
         <ServicesPage
             categoryData={displayData}
