@@ -8,8 +8,6 @@ const ActionBar = ({
     submitForm,
                    }) => {
 
-    console.log(title)
-
     return (
         <>
             <Card center={true} >
