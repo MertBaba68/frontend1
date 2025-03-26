@@ -21,20 +21,13 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
     const [searchTerm, setSearchTerm] = useState(null);
 
     const handleSearch = (term) => {
-        if (!term || term === "" || term === null) return
+        if (!term.trim()) return;
         setSearchTerm(term);
     }
 
     useEffect(() => {
-        if (!searchTerm || searchTerm === "" || searchTerm === null) {
-            setServicesError(null);
-            return
-        }
-
         const fetchCategoryBySearch = async () => {
-
             setIsSearching(true);
-            setServicesError(null);
 
             try {
                 const data = await getCategoryBySearch(categoryToFetch, searchTerm);
@@ -48,16 +41,14 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
         }
 
         fetchCategoryBySearch();
-    },[searchTerm, categoryToFetch])
+    },[searchTerm])
 
     useEffect(() => {
         if (!categoryToFetch) return;
 
         const fetchSelectedCategory = async () => {
             setIsInitialLoading(true)
-            setSearchTerm(null)
-
-            setError(null);
+            setError(null)
 
             try {
                 const data = await getCategoryByName(categoryToFetch);
