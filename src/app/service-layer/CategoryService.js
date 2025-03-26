@@ -36,11 +36,14 @@ export const getCategoryByName = async (categoryName) => {
 
 export const getCategoryBySearch = async (categoryName, searchTerm) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/categories/name/${categoryName}/${searchTerm}`, {
+        const response = await fetch(`${API_BASE_URL}/categories/name/${categoryName}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-            }
+            },
+            body: JSON.stringify({
+                searchTerm: searchTerm
+            })
         })
 
         if (!response.ok) {
