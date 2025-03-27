@@ -2,7 +2,7 @@ import config from "/config/config";
 
 const API_BASE_URL = config.API_BASE_URL;
 
-export const getCategoryByName = async (categoryName, searchTerm = null) => {
+export const getCategoryData = async (categoryName, searchTerm = null) => {
     try {
         const response = await fetch(`${API_BASE_URL}/categories/name/${categoryName}`, {
             method: "POST",
@@ -27,6 +27,3 @@ export const getCategoryByName = async (categoryName, searchTerm = null) => {
     }
 };
 
-export const getCategoryBySearch = async (categoryName, searchTerm) => {
-    return getCategoryByName(categoryName, searchTerm);
-};

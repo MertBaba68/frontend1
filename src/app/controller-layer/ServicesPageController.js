@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {getCategoryByName, getCategoryBySearch} from "@/app/service-layer/CategoryService";
+import {getCategoryData, getCategoryBySearch} from "@/app/service-layer/CategoryService";
 import ServicesPage from "@/app/view/components/ServicesPage";
 import { useParams } from "next/navigation";
 import StatusPage from "@/app/view/StatusPage";
@@ -31,7 +31,7 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
             setServicesError(null);
 
             try {
-                const data = await getCategoryBySearch(categoryToFetch, searchTerm);
+                const data = await getCategoryData(categoryToFetch, searchTerm);
                 setCategoryData(data);
             }  catch (error) {
                 setServicesError(error);
@@ -52,7 +52,7 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
             setError(null)
 
             try {
-                const data = await getCategoryByName(categoryToFetch);
+                const data = await getCategoryData(categoryToFetch);
                 setCategoryData(data);
             } catch (error) {
                 setError(error);

@@ -8,7 +8,7 @@ const Services = ({
                   }) => {
 
     if (!servicesCategory) {
-        return <p>Loading...</p>;
+        return <p>Aan het laden...</p>;
     }
 
     if (servicesError) {
@@ -16,11 +16,11 @@ const Services = ({
     }
 
     if (isSearching) {
-        return <p>...Searching</p>
+        return <p>Aan het zoeken...</p>
     }
 
     if (servicesCategory.services.length < 1) {
-        return <p>No matching search result :(</p>
+        return <p>Geen resultaten gevonden.(</p>
     }
 
     if (servicesCategory) return (

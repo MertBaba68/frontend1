@@ -28,7 +28,7 @@ const ContactForm = ({
             {errorMessage &&
                 <p className="contactform-error">{errorMessage}</p>}
             {isSubmitting &&
-                <p className="contactform-submitting">...Sending...</p>}
+                <p className="contactform-submitting">...Bezig met versturen...</p>}
 
             <form onSubmit={handleSubmitForm}>
                 <label htmlFor="companyName">Bedrijfsnaam</label>
