@@ -30,7 +30,7 @@ const LoginPage = ({email, setEmail, password, setPassword, incorrect, login}) =
                 <PageContainer>
                     <Card center="true" small="true">
                     <h1 className="header centered">Inloggen</h1>
-                    <form class="loginForm" onSubmit={handleFormSend}>
+                    <form className="loginForm" onSubmit={handleFormSend}>
                     <label htmlFor="email">Email</label>
 
                     <br></br>
