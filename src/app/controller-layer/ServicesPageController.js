@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {getCategoryData, getCategoryBySearch} from "@/app/service-layer/CategoryService";
+import {getCategoryData} from "@/app/service-layer/CategoryService";
 import ServicesPage from "@/app/view/components/ServicesPage";
 import { useParams } from "next/navigation";
 import StatusPage from "@/app/view/StatusPage";
@@ -72,8 +72,8 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
     },[categoryData])
 
     if (error) return <StatusPage type="error" status={error.message} />
-    if (isInitialLoading) return <StatusPage type="info" status="Loading..." />
-    if (!categoryData) return <StatusPage type="info" status="No data available" />
+    if (isInitialLoading) return <StatusPage type="info" status="Aan het laden..." />
+    if (!categoryData) return <StatusPage type="info" status="Geen data beschikbaar" />
 
     return (
         <ServicesPage
