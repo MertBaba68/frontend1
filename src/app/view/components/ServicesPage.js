@@ -4,6 +4,7 @@ import ContactFormController from "@/app/controller-layer/ContactFormController"
 import Page from "@/app/view/components/static/Page";
 import PageContainer from "@/app/view/components/static/PageContainer";
 import {ActionBarController} from "@/app/controller-layer/ActionBarController";
+import {CustomFilter} from "@/app/view/components/CustomFilter";
 
 const ServicesPage = ({
                           categoryData,
@@ -18,6 +19,9 @@ const ServicesPage = ({
             </div>
             <PageContainer>
                 <ActionBarController title={categoryData.name} onSearch={onSearch} />
+
+                <CustomFilter/>
+
             </PageContainer>
 
             <PageContainer>
