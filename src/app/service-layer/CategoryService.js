@@ -2,23 +2,17 @@ import config from "/config/config";
 
 const API_BASE_URL = config.API_BASE_URL;
 
-const getCategories = async () => {
-    try {
-        const data = await fetch(`${API_BASE_URL}/categories/`);
-        return await data.json();
-    } catch (error) {
-        return error
-    }
-}
-
-export const getCategoryByName = async (categoryName) => {
+export const getCategoryData = async (categoryName, searchTerm = null) => {
     try {
         const response = await fetch(`${API_BASE_URL}/categories/name/${categoryName}`, {
-            method: "GET",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
-            }
-        })
+            },
+            body: JSON.stringify({
+                searchTerm: searchTerm
+            })
+        });
 
         if (!response.ok) {
             if (response.status === 404) {
@@ -28,8 +22,8 @@ export const getCategoryByName = async (categoryName) => {
         }
 
         return await response.json();
-
     } catch (error) {
         throw new Error(error.message || "An unknown error occurred.");
     }
-}
+};
+
