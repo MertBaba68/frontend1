@@ -1,6 +1,5 @@
 import {useState} from "react";
 import ActionBar from "@/app/view/components/ActionBar";
-import {error} from "next/dist/build/output/log";
 
 export const ActionBarController = ({ title, onSearch }) => {
     const[searchTerm, setSearchTerm] = useState("");

@@ -1,4 +1,22 @@
-.customfilter-container {
+.customfilter-container-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     height: 100%;
     width: 100%;
+    align-items: center;
+    background-color: transparent;
+    color: var(--color_black);
+    padding: .5rem 0 .5rem 0;
 }
+
+.customfilter-title {
+    margin: .25rem .25rem .25rem 1rem;
+}
+
+.customfilter-arrow {
+    margin: .25rem 1rem .25rem .25rem;
+}
+
+.customfilter-line {}
+
