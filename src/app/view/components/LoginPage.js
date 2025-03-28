@@ -3,69 +3,52 @@ import PageContainer from "@/app/view/components/static/PageContainer";
 import "/src/styles/Login.css";
 import Card from "@/app/view/components/static/Card";
 import {VodafoneButton} from "@/app/view/components/VodafoneButton";
+import {InputField} from "@/app/view/components/InputField";
 
 const LoginPage = ({email, setEmail, password, setPassword, incorrect, login}) => {
-    const onEmailInput = (e) => {
-        setEmail(e.target.value);
-    };
-
-    const onPasswordInput = (e) => {
-        setPassword(e.target.value);  
-    };
-
-    const checkEnter = (e) => {
-        if (e.key == 'Enter') {
-            login();
-        }
-    }
-
     const handleFormSend = (e) => {
         e.preventDefault();
 
         login();
     }
+
     return (
         <>
             <Page>
                 <PageContainer>
                     <Card center="true" small="true">
-                    <h1 className="header centered">Inloggen</h1>
-                    <form className="loginForm" onSubmit={handleFormSend}>
-                    <label htmlFor="email">Email</label>
+                        <h1 className="header centered">Inloggen</h1>
+                        <form className="loginForm" onSubmit={handleFormSend}>
+                            <InputField
+                                label="Email"
+                                id="email"
+                                type="text"
+                                typeOfInput="input"
+                                name="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                onEnter={login}
+                            />
 
-                    <br></br>
+                            <br></br>
 
-                        <input 
-                            id="email" 
-                            type="text" 
-                            autoComplete="email" 
-                            value={email} 
-                            onChange={onEmailInput} 
-                            onKeyDown={checkEnter}
-                        />
+                            <InputField
+                                label="Wachtwoord"
+                                id="password"
+                                type="password"
+                                typeOfInput="input"
+                                name="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                onEnter={login}
+                            />
 
-                        <br></br>
+                            <br></br>
 
-                        <label htmlFor="password">Wachtwoord</label>
+                            {incorrect && (<><p className="error">Incorrect combinatie van email en wachtwoord</p><br></br></>)}
 
-                        <br></br>
-
-                        <input 
-                            id="password" 
-                            type="password" 
-                            autoComplete="password" 
-                            value={password} 
-                            onChange={onPasswordInput}
-                            onKeyDown={checkEnter}
-                        />
-
-                        <br></br>
-
-                        <VodafoneButton type = "submit">Login</VodafoneButton>
-                    </form>
-
-                    {incorrect && (<p className="error">Incorrect combinatie van email en wachtwoord</p>)}
-
+                            <VodafoneButton type = "submit">Login</VodafoneButton>
+                        </form>
                     </Card>
                 </PageContainer>
             </Page>
