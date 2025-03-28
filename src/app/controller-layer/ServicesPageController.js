@@ -77,8 +77,6 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
         }
     },[categoryData])
 
-    console.log(filterValues)
-
     if (error) return <StatusPage type="error" status={error.message} />
     if (isInitialLoading) return <StatusPage type="info" status="Aan het laden..." />
     if (!categoryData) return <StatusPage type="info" status="Geen data beschikbaar" />
