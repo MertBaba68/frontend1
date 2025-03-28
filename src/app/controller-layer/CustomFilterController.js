@@ -5,41 +5,44 @@ import {useEffect, useState} from "react";
 export const CustomFilterController = ({ filterData }) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const [filterValues, setFilterValues] = useState({
-
+    const [filterValues, setFilterValues] = useState(() => {
+        return filterData.reduce((acc, item) => {
+            acc[item.title] = { selectedValues: [] };
+            return acc;
+        }, {});
     });
 
     const handleClick = () => {
         setIsOpen(prev => !prev);
     }
 
-    const test = (selectedOption) => {
-        
-    }
+    const handleSelect = (selectedOption) => {
+        console.log(filterValues)
 
-    const init = () => {
-        return filterData.reduce((acc, item) => {
+        setFilterValues(prevState => {
+            const newFilterValues = {...prevState};
 
-            if (!acc[item.title]) {
-                acc[item.title] = { selectedValues: [] };
+            if (newFilterValues[selectedOption.title]) {
+                newFilterValues[selectedOption.title] = {
+                    selectedValues: [
+                        ...newFilterValues[selectedOption.title].selectedValues,
+                        selectedOption.option
+                    ]
+                }
             }
 
-            return acc;
-        }, {});
-    }
+            return newFilterValues
+        });
 
-    useEffect(() => {
-        if (filterData) {
-            console.log(init())
-        }
-    },[filterData]);
+
+    }
 
     return(
         <CustomFilter
             onClick={handleClick}
             isOpen={isOpen}
             filterData={filterData}
-            onSelect={test}
+            onSelect={handleSelect}
         />
     )
 }
