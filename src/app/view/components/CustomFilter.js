@@ -27,8 +27,6 @@ export const CustomFilter = ({ onClick, isOpen, filterData, onSelect, error }) =
                     ))}
                 </div>
             )}
-
-
         </div>
     )
 }
