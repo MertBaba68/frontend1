@@ -1,27 +1,36 @@
-.customfilter-container-content {
+.customfilter-container {
+    width: 100%;
+    border: 1px solid var(--color_gray-100);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.customfilter-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 100%;
-    width: 100%;
     align-items: center;
+    padding: 0.5rem 0;
     background-color: transparent;
     color: var(--color_black);
-    padding: .5rem 0 .5rem 0;
+    cursor: pointer;
 }
 
 .customfilter-title {
-    margin: .25rem .25rem .25rem 1rem;
+    margin: 0.25rem 0.25rem 0.25rem 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 .customfilter-arrow {
-    margin: .25rem 1rem .25rem .25rem;
+    margin: 0.25rem 1rem 0.25rem 0.25rem;
+    transition: transform 0.75s ease;
+}
+.customfilter-arrow-open {
+    transform: rotate(180deg);
 }
 
-.customfilter-line {}
-
-.customfilter-content {
+.customfilter-body {
     background-color: var(--color_gray-100);
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
 }
-

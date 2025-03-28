@@ -17,11 +17,13 @@ const ServicesPage = ({
             <div className="service-page-header-to-be-made" >
                 {/*Header to be expected*/}
             </div>
+
             <PageContainer>
                 <ActionBarController title={categoryData.name} onSearch={onSearch} />
+            </PageContainer>
 
+            <PageContainer>
                 <CustomFilterController/>
-
             </PageContainer>
 
             <PageContainer>
