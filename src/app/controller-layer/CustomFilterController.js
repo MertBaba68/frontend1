@@ -3,12 +3,13 @@ import {useEffect, useState} from "react";
 import {getFilterValues} from "@/app/service-layer/FilterService";
 
 
-export const CustomFilterController = ({ filterData }) => {
+export const CustomFilterController = ({ }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isFetching, setIsFetching] = useState(false);
     const [error, setError] = useState(null);
 
     const [filterValues, setFilterValues] = useState(null);
+    const [filterData, setFilterData] = useState(null);
 
 
 
@@ -36,6 +37,7 @@ export const CustomFilterController = ({ filterData }) => {
         setFilterValues(newFilterValues);
     };
 
+    // TODO: Use this instead of placeholder function
     // useEffect(() => {
     //     const fetchFilterValues = async () => {
     //         setIsFetching(true);
@@ -52,20 +54,34 @@ export const CustomFilterController = ({ filterData }) => {
     //     }
     // },[])
 
+    const fetchFilterValues = () => {
+        return [
+            { title: "Rol", options: ["IT manager", "CEO", "CFO"] },
+            { title: "Type oplossing", options: ["Hardware", "Software", "IoT"] },
+            { title: "Techniek", options: ["Sensoren", "Connectiviteit", "Software", "Data", "AI"] },
+            { title: "Bedrijfsgrootte", options: ["Small", "Large", "MKB", "SOHO"] },
+            { title: "Probleem", options: ["Kosten verlagen", "Opbrengsten verhogen", "Klanten ervaring verbeteren"] },
+            { title: "Waarde", options: ["Geld", "Duurzaamheid", "Risico verlagen", "Compliance"] }
+        ]
+    }
+
     const initialValuesBody = () => {
         return filterData.reduce((acc, item) => {
-            acc[item.title] = { selectedValues: [] };
+            acc[item.title] = { selectedValues: [] }
             return acc;
-        }, {});
+        }, {})
     }
 
     useEffect(() => {
-        setFilterValues(initialValuesBody())
-    },[]);
+        const data = fetchFilterValues();
+        setFilterData(data);
+    }, []);
 
     useEffect(() => {
-        console.log(filterValues);
-    }, [filterValues]);
+        if (filterData) {
+            setFilterValues(initialValuesBody());
+        }
+    }, [filterData]);
 
     return(
         <CustomFilter

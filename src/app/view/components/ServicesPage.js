@@ -13,39 +13,6 @@ const ServicesPage = ({
     isSearching
 }) => {
 
-    const filterData = [
-        {
-            title: "Rol",
-            options: ["IT manager", "CEO", "CFO"],
-            type: "multi-select"
-        },
-        {
-            title: "Type oplossing",
-            options: ["Hardware", "Software", "IoT"],
-            type: "multi-select"
-        },
-        {
-            title: "Techniek",
-            options: ["Sensoren", "Connectiviteit", "Software", "Data", "AI"],
-            type: "multi-select"
-        },
-        {
-            title: "Bedrijfsgrootte",
-            options: ["Small", "Large", "MKB", "SOHO"],
-            type: "single-select"
-        },
-        {
-            title: "Probleem",
-            options: ["Kosten verlagen", "Opbrengsten verhogen", "Klanten ervaring verbeteren"],
-            type: "multi-select"
-        },
-        {
-            title: "Waarde",
-            options: ["Geld", "Duurzaamheid", "Risico verlagen", "Compliance"],
-            type: "multi-select"
-        }
-    ];
-
     return (
         <Page>
             <div className="service-page-header-to-be-made" >
@@ -57,7 +24,7 @@ const ServicesPage = ({
             </PageContainer>
 
             <PageContainer>
-                <CustomFilterController filterData={filterData} />
+                <CustomFilterController/>
             </PageContainer>
 
             <PageContainer>
