@@ -48,9 +48,19 @@ const Navbar = () => {
               <Link href="/login">Login</Link>
             </li>
           ) : (
-            <li>
-              <button onClick={handleLogout}>Logout</button>
-            </li>
+            <>
+              <li>
+                <ul>
+                  <li>
+                    <Link href="/profile">Mijn profiel</Link>
+                  </li>
+                  <li>
+                    <button onClick={handleLogout}>Logout</button>
+                  </li>
+                </ul>
+              </li>
+
+            </>
           )}
         </ul>
       </nav>
