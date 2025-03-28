@@ -72,7 +72,6 @@
     }
 }
 
-/* Mobile layout */
 @media (max-width: 670px) {
     .customfilter-body {
         display: grid;

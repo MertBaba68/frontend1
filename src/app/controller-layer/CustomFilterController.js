@@ -18,7 +18,7 @@ export const CustomFilterController = ({ filterData }) => {
 
     const handleSelect = (selectedOptionData) => {
 
-        const newFilterValues = { ...filterValues };
+        let newFilterValues = { ...filterValues };
         const title = selectedOptionData.title;
         const option = selectedOptionData.option;
 
@@ -27,8 +27,9 @@ export const CustomFilterController = ({ filterData }) => {
 
             if (!selectedOptions.includes(option)) {
                 selectedOptions.push(option);
-            } else {
-                selectedOptions.filter(o => o!== option);
+            }
+            else {
+                selectedOptions.splice(selectedOptions.indexOf(option), 1);
             }
         }
 

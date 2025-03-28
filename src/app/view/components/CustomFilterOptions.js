@@ -17,7 +17,6 @@ export const CustomFilterOptions = (
                     <label
                         className="filteroption-label"
                         key={option}
-                        onClick={() => onSelect({ title, option })}
                     >
                         <input
                             className="filteroption-checkbox"
@@ -26,6 +25,7 @@ export const CustomFilterOptions = (
                             name={option}
                             value={option}
                             hidden
+                            onClick={() => onSelect({ title, option })}
                         />
                         <span className="filteroption-button">{option}</span>
                     </label>
