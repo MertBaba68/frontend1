@@ -1,52 +1,45 @@
 import {CustomFilter} from "@/app/view/components/CustomFilter";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
-export const CustomFilterController = () => {
+export const CustomFilterController = ({ filterData }) => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const [filterValues, setFilterValues] = useState({
+
+    });
 
     const handleClick = () => {
         setIsOpen(prev => !prev);
     }
 
-    const filterModel = [
-        {
-            title: "Rol",
-            options: ["IT manager", "CEO", "CFO"],
-            type: "multi-select"
-        },
-        {
-            title: "Type oplossing",
-            options: ["Hardware", "Software", "IoT"],
-            type: "multi-select"
-        },
-        {
-            title: "Techniek",
-            options: ["Sensoren", "Connectiviteit", "Software", "Data", "AI"],
-            type: "multi-select"
-        },
-        {
-            title: "Bedrijfsgrootte",
-            options: ["Small", "Large", "MKB", "SOHO"],
-            type: "single-select"
-        },
-        {
-            title: "Probleem",
-            options: ["Kosten verlagen", "Opbrengsten verhogen", "Klanten ervaring verbeteren"],
-            type: "multi-select"
-        },
-        {
-            title: "Waarde",
-            options: ["Geld", "Duurzaamheid", "Risico verlagen", "Compliance"],
-            type: "multi-select"
+    const test = (selectedOption) => {
+        
+    }
+
+    const init = () => {
+        return filterData.reduce((acc, item) => {
+
+            if (!acc[item.title]) {
+                acc[item.title] = { selectedValues: [] };
+            }
+
+            return acc;
+        }, {});
+    }
+
+    useEffect(() => {
+        if (filterData) {
+            console.log(init())
         }
-    ];
+    },[filterData]);
 
     return(
         <CustomFilter
             onClick={handleClick}
             isOpen={isOpen}
-            filterData={filterModel}
+            filterData={filterData}
+            onSelect={test}
         />
     )
 }

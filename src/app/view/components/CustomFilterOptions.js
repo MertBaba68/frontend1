@@ -1,21 +1,33 @@
 import "/src/styles/CustomFilterOptions.css"
 
-export const CustomFilterOptions = ({ data, title }) => {
+export const CustomFilterOptions = (
+    {
+        data,
+        title,
+        onSelect,
+
+    }
+) => {
+
     return (
         <div className="filteroption-container">
             <h3 className="filteroption-title">{title}</h3>
             <div className="filteroption-options">
-                {data.map(item => (
-                    <label key={item} className="filteroption-label">
+                {data.map(option => (
+                    <label
+                        className="filteroption-label"
+                        key={option}
+                        onClick={() => onSelect({ title, option })}
+                    >
                         <input
                             className="filteroption-checkbox"
-                            id={item}
+                            id={option}
                             type="checkbox"
-                            name={item}
-                            value={item}
+                            name={option}
+                            value={option}
                             hidden
                         />
-                        <span className="filteroption-button">{item}</span>
+                        <span className="filteroption-button">{option}</span>
                     </label>
                 ))}
             </div>

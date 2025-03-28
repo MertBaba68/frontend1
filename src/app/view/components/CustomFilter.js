@@ -3,7 +3,7 @@
 import "/src/styles/CustomFilter.css"
 import {CustomFilterOptions} from "@/app/view/components/CustomFilterOptions";
 
-export const CustomFilter = ({ onClick, isOpen, filterData }) => {
+export const CustomFilter = ({ onClick, isOpen, filterData, onSelect }) => {
     return(
         <div className="customfilter-container">
             <div onClick={onClick} className="customfilter-header">
@@ -18,6 +18,7 @@ export const CustomFilter = ({ onClick, isOpen, filterData }) => {
                             key={index}
                             title={filter.title}
                             data={filter.options}
+                            onSelect={onSelect}
                         />
                     ))}
                 </div>
