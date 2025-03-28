@@ -2,7 +2,7 @@ import config from "/config/config";
 
 const API_BASE_URL = config.API_BASE_URL;
 
-export const getCategoryData = async (categoryName, searchTerm = null) => {
+export const getCategoryData = async (categoryName, searchTerm = null, filterValues) => {
     try {
         const response = await fetch(`${API_BASE_URL}/categories/name/${categoryName}`, {
             method: "POST",
@@ -10,7 +10,8 @@ export const getCategoryData = async (categoryName, searchTerm = null) => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                searchTerm: searchTerm
+                searchTerm: searchTerm,
+                filterValues: filterValues,
             })
         });
 
