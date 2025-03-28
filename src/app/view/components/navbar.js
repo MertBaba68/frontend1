@@ -36,7 +36,7 @@ const Navbar = () => {
 
   return (
     <header className="navbar">
-      <a href="#main-content" className="skip-link">Skip to Main Content</a>
+      <a href="#main-content" className="skip-link">Direct naar inhoud</a>
       <nav>
         <ul>
           <li>
