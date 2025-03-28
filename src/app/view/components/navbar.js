@@ -55,7 +55,7 @@ const Navbar = () => {
                     <Link href="/profile">Mijn profiel</Link>
                   </li>
                   <li>
-                    <button onClick={handleLogout}>Logout</button>
+                    <button onClick={handleLogout}>Uitloggen</button>
                   </li>
                 </ul>
               </li>
