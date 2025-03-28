@@ -38,7 +38,7 @@ export const CustomFilterController = ({ onFilterChange }) => {
         onFilterChange(newFilterValues);
     };
 
-    // TODO: Use this instead of placeholder function
+    // TODO: Use this instead of placeholder function when backend is ready
     // useEffect(() => {
     //     const fetchFilterValues = async () => {
     //         setIsFetching(true);
