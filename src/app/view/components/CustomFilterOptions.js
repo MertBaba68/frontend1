@@ -7,7 +7,7 @@ export const CustomFilterOptions = ({ data, title }) => {
 
             {
                 data.map(item => (
-                    <label key={item} htmlFor={item} className="filteroption-label">
+                    <label key={item} htmlFor={item.title} className="filteroption-label">
                         <input className="filteroption-checkbox" id={item} type="checkbox" name={item}
                                value={item} hidden=''>
                             {item.name}

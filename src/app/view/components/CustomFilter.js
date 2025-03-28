@@ -1,9 +1,11 @@
+"use client"
+
 import "/src/styles/CustomFilter.css"
 import {CustomFilterOptions} from "@/app/view/components/CustomFilterOptions";
 
-export const CustomFilter = ({ onClick, isOpen,  }) => {
+export const CustomFilter = ({ onClick, isOpen, filterData  }) => {
 
-    const ROLES = ['IT manager', 'CEO', 'CFO']
+    console.log(filterData)
 
     return(
         <div className="customfilter-container" >
@@ -14,9 +16,11 @@ export const CustomFilter = ({ onClick, isOpen,  }) => {
             {!isOpen && (
                 <hr className="customfilter-line"/>
             )}
-            {isOpen && (
+            {isOpen && filterData && (
                 <div className="customfilter-content">
-                    <CustomFilterOptions title="Rol" data={ROLES}/>
+                    {filterData.map((filter, index) => (
+                        <CustomFilterOptions key={index} title={filter.title} data={filter.options}/>
+                    ))}
                 </div>
                 )}
         </div>

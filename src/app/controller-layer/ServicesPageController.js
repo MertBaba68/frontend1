@@ -65,11 +65,11 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
         fetchSelectedCategory();
     }, [categoryToFetch]);
 
-    useEffect(() => {
-        if (categoryData) {
-            document.title = `Vodafone Partner for Progress | ${categoryData.name}`;
-        }
-    },[categoryData])
+    // useEffect(() => {
+    //     if (categoryData) {
+    //         document.title = `Vodafone Partner for Progress | ${categoryData.name}`;
+    //     }
+    // },[categoryData])
 
     if (error) return <StatusPage type="error" status={error.message} />
     if (isInitialLoading) return <StatusPage type="info" status="Aan het laden..." />

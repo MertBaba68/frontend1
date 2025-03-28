@@ -1,5 +1,5 @@
 .filteroption-container {
-    margin-bottom: .5rem;
+    margin: 1.5rem 0 1.5rem 0;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -33,7 +33,7 @@
 }
 
 .filteroption-button {
-    padding: .5rem 1.25rem ;
+    padding: .5rem 1.25rem;
     border-radius: 1.75rem;
     background: white;
     font-size: 1.125rem;
