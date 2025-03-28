@@ -8,12 +8,9 @@ export const CustomFilterController = ({ filterData }) => {
     const [isFetching, setIsFetching] = useState(false);
     const [error, setError] = useState(null);
 
-    const [filterValues, setFilterValues] = useState(() => {
-        return filterData.reduce((acc, item) => {
-            acc[item.title] = { selectedValues: [] };
-            return acc;
-        }, {});
-    });
+    const [filterValues, setFilterValues] = useState(null);
+
+
 
     const handleClick = () => {
         setIsOpen(prev => !prev);
@@ -21,48 +18,53 @@ export const CustomFilterController = ({ filterData }) => {
 
     const handleSelect = (selectedOptionData) => {
 
-        setFilterValues(prevState => {
-            const newFilterValues = {...prevState};
+        const newFilterValues = { ...filterValues };
+        const title = selectedOptionData.title;
+        const option = selectedOptionData.option;
 
-            if (newFilterValues[selectedOptionData.title]) {
-                const selectedValues = newFilterValues[selectedOptionData.title].selectedValues;
+        if (newFilterValues[title]) {
+            const selectedOptions = newFilterValues[title].selectedValues;
 
-                const isOptionSelected = selectedValues.includes(selectedOptionData.option);
-
-                if (isOptionSelected) {
-                    newFilterValues[selectedOptionData.title] = {
-                        selectedValues: selectedValues.filter(option => option !== selectedOptionData.option)
-                    };
-                }
-                newFilterValues[selectedOptionData.title] = {
-                    selectedValues: [
-                        ...newFilterValues[selectedOptionData.title].selectedValues,
-                        selectedOptionData.option
-                    ]
-                }
-            }
-
-            return newFilterValues
-        });
-    }
-
-    console.log(filterValues)
-
-    useEffect(() => {
-        const fetchFilterValues = async () => {
-            setIsFetching(true);
-            setError(null)
-
-            try {
-                const data = await getFilterValues();
-                setFilterValues(data);
-            } catch (error) {
-                setError(error);
-            } finally {
-                setIsFetching(false);
+            if (!selectedOptions.includes(option)) {
+                selectedOptions.push(option);
+            } else {
+                selectedOptions.filter(o => o!== option);
             }
         }
-    })
+
+        setFilterValues(newFilterValues);
+    };
+
+    // useEffect(() => {
+    //     const fetchFilterValues = async () => {
+    //         setIsFetching(true);
+    //         setError(null)
+    //
+    //         try {
+    //             const data = await getFilterValues();
+    //             setFilterValues(data);
+    //         } catch (error) {
+    //             setError(error);
+    //         } finally {
+    //             setIsFetching(false);
+    //         }
+    //     }
+    // },[])
+
+    const initialValuesBody = () => {
+        return filterData.reduce((acc, item) => {
+            acc[item.title] = { selectedValues: [] };
+            return acc;
+        }, {});
+    }
+
+    useEffect(() => {
+        setFilterValues(initialValuesBody())
+    },[]);
+
+    useEffect(() => {
+        console.log(filterValues);
+    }, [filterValues]);
 
     return(
         <CustomFilter
