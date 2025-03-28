@@ -27,6 +27,10 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
         setSearchTerm(term);
     }
 
+    const handleFilterChange = (newFilterValues) => {
+        setFilterValues(newFilterValues);
+    }
+
     useEffect(() => {
         const fetchCategoryBySearch = async () => {
             setIsSearching(true);
@@ -67,11 +71,13 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
         fetchSelectedCategory();
     }, [categoryToFetch]);
 
-    // useEffect(() => {
-    //     if (categoryData) {
-    //         document.title = `Vodafone Partner for Progress | ${categoryData.name}`;
-    //     }
-    // },[categoryData])
+    useEffect(() => {
+        if (categoryData) {
+            document.title = `Vodafone Partner for Progress | ${categoryData.name}`;
+        }
+    },[categoryData])
+
+    console.log(filterValues)
 
     if (error) return <StatusPage type="error" status={error.message} />
     if (isInitialLoading) return <StatusPage type="info" status="Aan het laden..." />
@@ -83,7 +89,7 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
             onSearch={handleSearch}
             servicesError={servicesError}
             isSearching={isSearching}
-            filterValues={filterValues}
+            onFilterChange={handleFilterChange}
         />
     );
 };

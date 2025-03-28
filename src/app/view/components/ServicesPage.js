@@ -10,7 +10,8 @@ const ServicesPage = ({
                           categoryData,
                           onSearch,
     servicesError,
-    isSearching
+    isSearching,
+    onFilterChange,
 }) => {
 
     return (
@@ -24,7 +25,7 @@ const ServicesPage = ({
             </PageContainer>
 
             <PageContainer>
-                <CustomFilterController/>
+                <CustomFilterController onFilterChange={onFilterChange} />
             </PageContainer>
 
             <PageContainer>

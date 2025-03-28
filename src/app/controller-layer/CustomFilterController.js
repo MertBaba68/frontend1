@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {getFilterValues} from "@/app/service-layer/FilterService";
 
 
-export const CustomFilterController = ({ }) => {
+export const CustomFilterController = ({ onFilterChange }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isFetching, setIsFetching] = useState(false);
     const [error, setError] = useState(null);
@@ -35,6 +35,7 @@ export const CustomFilterController = ({ }) => {
         }
 
         setFilterValues(newFilterValues);
+        onFilterChange(newFilterValues);
     };
 
     // TODO: Use this instead of placeholder function
