@@ -2,7 +2,6 @@ import {CustomFilter} from "@/app/view/components/CustomFilter";
 import {useEffect, useState} from "react";
 import {getFilterValues} from "@/app/service-layer/FilterService";
 
-
 export const CustomFilterController = ({ onFilterChange }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isFetching, setIsFetching] = useState(false);
@@ -11,14 +10,11 @@ export const CustomFilterController = ({ onFilterChange }) => {
     const [filterValues, setFilterValues] = useState(null);
     const [filterData, setFilterData] = useState(null);
 
-
-
     const handleClick = () => {
         setIsOpen(prev => !prev);
     }
 
     const handleSelect = (selectedOptionData) => {
-
         let newFilterValues = { ...filterValues };
         const title = selectedOptionData.title;
         const option = selectedOptionData.option;
