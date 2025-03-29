@@ -1,13 +1,10 @@
 import "/src/styles/CustomFilterOptions.css"
 
-export const CustomFilterOptions = (
-    {
+export const CustomFilterOptions = ({
         data,
         title,
         onSelect,
-
-    }
-) => {
+    }) => {
 
     return (
         <div className="filteroption-container">
