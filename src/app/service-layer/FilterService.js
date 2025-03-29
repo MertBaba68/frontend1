@@ -2,7 +2,6 @@ import config from "../../../config/config";
 
 const API_BASE_URL = config.API_BASE_URL;
 
-
 export const getFilterValues = async () => {
     try {
         const response = await fetch(`${API_BASE_URL}/filter/`, {
@@ -20,5 +19,4 @@ export const getFilterValues = async () => {
     }  catch (error) {
         throw new Error(error.message || "An unknown error occurred.");
     }
-
 }
