@@ -7,8 +7,8 @@ import {ActionBarController} from "@/app/controller-layer/ActionBarController";
 import {CustomFilterController} from "@/app/controller-layer/CustomFilterController";
 
 const ServicesPage = ({
-                          categoryData,
-                          onSearch,
+    categoryData,
+    onSearch,
     servicesError,
     isSearching,
     onFilterChange,
