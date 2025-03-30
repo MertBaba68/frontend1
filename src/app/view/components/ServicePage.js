@@ -9,7 +9,11 @@ import BreadCrumbs from "./Breadcrumbs";
 const ServicePage = ({ serviceData }) => {
     return (
         <>
-            <BreadCrumbs links={[{url:"/categories/"+serviceData.categoryName,name:serviceData.categoryName}]}></BreadCrumbs>
+            <BreadCrumbs links={[
+                {url:"/categories/"+serviceData.categoryName,name:serviceData.categoryName},
+                {url:"/service/"+serviceData.id,name:serviceData.name}
+            ]}></BreadCrumbs>
+            
             <div
                 className="background-image-container"
                 style={{

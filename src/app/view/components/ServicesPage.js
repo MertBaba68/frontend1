@@ -4,34 +4,39 @@ import ContactFormController from "@/app/controller-layer/ContactFormController"
 import Page from "@/app/view/components/static/Page";
 import PageContainer from "@/app/view/components/static/PageContainer";
 import {ActionBarController} from "@/app/controller-layer/ActionBarController";
+import BreadCrumbs from "./Breadcrumbs";
 
 const ServicesPage = ({
-                          categoryData,
-                          onSearch,
+    categoryData,
+    onSearch,
     servicesError,
     isSearching
 }) => {
     return (
-        <Page>
-            <div className="service-page-header-to-be-made" >
-                {/*Header to be expected*/}
-            </div>
-            <PageContainer>
-                <ActionBarController title={categoryData.name} onSearch={onSearch} />
-            </PageContainer>
+        <>
+            <BreadCrumbs links={[{url:"/categories/"+categoryData.name,name:categoryData.name}]}></BreadCrumbs>
 
-            <PageContainer>
-                <Services
-                    servicesCategory={categoryData}
-                    isSearching={isSearching}
-                    servicesError={servicesError}
-                />
-            </PageContainer>
+            <Page>
+                <div className="service-page-header-to-be-made" >
+                    {/*Header to be expected*/}
+                </div>
+                <PageContainer>
+                    <ActionBarController title={categoryData.name} onSearch={onSearch} />
+                </PageContainer>
 
-            <PageContainer>
-                <ContactFormController page="Servicepage" />
-            </PageContainer>
-        </Page>
+                <PageContainer>
+                    <Services
+                        servicesCategory={categoryData}
+                        isSearching={isSearching}
+                        servicesError={servicesError}
+                    />
+                </PageContainer>
+
+                <PageContainer>
+                    <ContactFormController page="Servicepage" />
+                </PageContainer>
+            </Page>
+        </>
     );
 };
 
