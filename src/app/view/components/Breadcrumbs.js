@@ -2,22 +2,26 @@ import Link from "next/link";
 import "/src/styles/Breadcrumbs.css";
 
 const Navbar = ({ links = [] }) => {
-  const allLinks = [{ name: "Home", url: "/" }, ...links];
-
-  if (allLinks.length == 1) {
+  if (links.length === 0) {
     return;
   }
 
   return (
     <nav className="breadcrumbs">
-      {allLinks.map((link, index) => (
-        <span key={index} className="breadcrumb">
-          <Link href={link.url}>
-            {link.name}
-          </Link>
-          {index !== allLinks.length - 1 && (
-            <span className="separator"> / </span>
-          )}
+      <span className="breadcrumb">
+        <Link className="vodafone-logo-link" href="/">
+          <img src="/vodafone-logo-red-64x64.png" className="logo" alt="home"></img>
+        </Link>
+      </span>
+
+      {links.map((link, index) => (
+        <span key={index}>
+          <span className="separator"> &gt; </span>
+          <span className="breadcrumb">
+            <Link href={link.url}>
+              {link.name}
+            </Link>
+          </span>
         </span>
       ))}
     </nav>

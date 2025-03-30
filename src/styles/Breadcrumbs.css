@@ -1,3 +1,22 @@
 span.breadcrumb {
     margin-left:0.5rem;
 }
+
+img.logo {
+    height: 10px;
+    width: 10px;
+}
+
+.breadcrumb > a:hover, .breadcrumb > a:focus {
+    color: var(--color_primary);
+    text-decoration : underline;
+    text-underline-offset: 3px;
+}
+
+.vodafone-logo-link img {
+    filter: grayscale(100%);
+}
+
+.vodafone-logo-link:focus img, .vodafone-logo-link:hover img {
+    filter: grayscale(0%);
+}
