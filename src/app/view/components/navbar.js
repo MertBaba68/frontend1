@@ -21,9 +21,9 @@ const Navbar = () => {
             const navbarElement = document.querySelector(".navbar");
             navbarElement.addEventListener("login", checkAuth);
 
-        return () => {
-            navbarElement.removeEventListener("login", checkAuth);
-        };
+            return () => {
+                navbarElement.removeEventListener("login", checkAuth);
+            };
         }
     }, []);
 
