@@ -25,7 +25,9 @@ const LoginPageController = () => {
         try {
             const response = await login({emailAddress:email, password:password})
             storeAuthToken(response.token);
-            router.push(HOMEPAGE_ROUTE) 
+            router.push(HOMEPAGE_ROUTE);
+
+            document.querySelector(".navbar").dispatchEvent(new CustomEvent("login", { detail: { loggedIn: true } }));
         } catch (error) {
             console.log(error)
             setIncorrect(true)

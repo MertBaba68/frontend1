@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import Navbar from "./view/components/navbar";
 
 export const metadata = {
   title: "Vodafone Partner For Progress",
@@ -17,7 +18,12 @@ export default function RootLayout({ children }) {
         <title>Vite + React</title>
       </head>
       <body>
-      {children}
+        <header>
+          <Navbar></Navbar>
+        </header>
+        <main id="main-content">
+        {children}
+        </main>
       </body>
       </html>
   );
