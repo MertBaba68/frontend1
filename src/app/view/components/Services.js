@@ -20,7 +20,7 @@ const Services = ({
     }
 
     if (servicesCategory.services.length < 1) {
-        return <p>Geen resultaten gevonden.(</p>
+        return <p>Geen resultaten gevonden.</p>
     }
 
     if (servicesCategory) return (
