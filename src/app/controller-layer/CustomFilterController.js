@@ -16,7 +16,7 @@ export const CustomFilterController = ({ onFilterChange }) => {
 
     const handleSelect = (selectedOptionData) => {
         let newFilterValues = { ...filterOptions };
-        const title = selectedOptionData.title;
+        const title = selectedOptionData.filter;
         const option = selectedOptionData.option;
 
         if (newFilterValues[title]) {
@@ -44,8 +44,7 @@ export const CustomFilterController = ({ onFilterChange }) => {
                 setFilterData(data)
 
                 const initialFilterOptions = await data.reduce((acc, item) => {
-                    console.log(item.options)
-                    acc[item.title] = { selectedValues: [] }
+                    acc[item.filter] = { selectedValues: [] }
                     return acc
                 }, {})
                 setFilterOptions(initialFilterOptions);
