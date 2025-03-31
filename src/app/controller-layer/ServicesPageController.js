@@ -20,9 +20,15 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
 
     const [searchTerm, setSearchTerm] = useState(null);
 
+    const [filterValues, setFilterValues] = useState(null);
+
     const handleSearch = (term) => {
         if (!term.trim()) return;
         setSearchTerm(term);
+    }
+
+    const handleFilterChange = (newFilterValues) => {
+        setFilterValues(newFilterValues);
     }
 
     useEffect(() => {
@@ -31,7 +37,7 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
             setServicesError(null);
 
             try {
-                const data = await getCategoryData(categoryToFetch, searchTerm);
+                const data = await getCategoryData(categoryToFetch, searchTerm, filterValues);
                 setCategoryData(data);
             }  catch (error) {
                 setServicesError(error);
@@ -42,7 +48,7 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
         }
 
         fetchCategoryBySearch();
-    },[searchTerm])
+    },[searchTerm, filterValues])
 
     useEffect(() => {
         if (!categoryToFetch) return;
@@ -81,6 +87,7 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
             onSearch={handleSearch}
             servicesError={servicesError}
             isSearching={isSearching}
+            onFilterChange={handleFilterChange}
         />
     );
 };
