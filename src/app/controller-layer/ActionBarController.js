@@ -6,11 +6,6 @@ export const ActionBarController = ({ title, onSearch }) => {
     const[errorMessage, setErrorMessage] = useState("");
 
     const handleSubmitForm = () => {
-        if (!searchTerm || !searchTerm.length || searchTerm === "") {
-            setErrorMessage("Please enter a valid onSearch term");
-            return
-        }
-
         setErrorMessage("")
         onSearch(searchTerm);
     }
