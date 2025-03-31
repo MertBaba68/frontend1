@@ -23,7 +23,6 @@ const ServicesPageController = ({ categoryName: propCategory }) => {
     const [filterValues, setFilterValues] = useState(null);
 
     const handleSearch = (term) => {
-        if (!term.trim()) return;
         setSearchTerm(term);
     }
 
