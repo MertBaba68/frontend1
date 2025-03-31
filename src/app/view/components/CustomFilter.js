@@ -11,7 +11,7 @@ export const CustomFilter = ({ onClick, isOpen, filterData, onSelect, error }) =
 
             {
                 error && (
-                    <p>Is ging mis tijdens het ophalen van de filter</p>
+                    <p>Iets ging mis tijdens het ophalen van de filter</p>
                 )
             }
 
