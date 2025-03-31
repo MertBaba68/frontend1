@@ -2,7 +2,7 @@ import config from "../../../config/config";
 
 const API_BASE_URL = config.API_BASE_URL;
 
-export const getFilterValues = async () => {
+export const getFilterOptions = async () => {
     try {
         const response = await fetch(`${API_BASE_URL}/filter/`, {
             method: 'GET',
