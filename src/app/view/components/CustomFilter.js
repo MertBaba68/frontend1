@@ -21,6 +21,7 @@ export const CustomFilter = ({ onClick, isOpen, filterData, onSelect, error }) =
                         <CustomFilterOptions
                             key={index}
                             title={filter.title}
+                            filter={filter.filter}
                             data={filter.options}
                             onSelect={onSelect}
                         />

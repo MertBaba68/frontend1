@@ -4,8 +4,8 @@ export const CustomFilterOptions = ({
         data,
         title,
         onSelect,
+        filter,
     }) => {
-
     return (
         <div className="filteroption-container">
             <h3 className="filteroption-title">{title}</h3>
@@ -22,7 +22,7 @@ export const CustomFilterOptions = ({
                             name={option}
                             value={option}
                             hidden
-                            onClick={() => onSelect({ title, option })}
+                            onClick={() => onSelect({ filter, option })}
                         />
                         <span className="filteroption-button">{option}</span>
                     </label>
