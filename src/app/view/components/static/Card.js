@@ -1,9 +1,10 @@
 import "/src/styles/Card.css"
 
-const Card = ({ children, center }) => {
+const Card = ({ children, center, small }) => {
 
     const alignment = center ? "card-container-center" : "card-container-left";
-    const cardClass = `card-container ${alignment}`;
+    const size = small ? "card-container-small" : "card-container-large";
+    const cardClass = `card-container ${alignment} ${size}`;
 
     return (
         <div className={cardClass}>

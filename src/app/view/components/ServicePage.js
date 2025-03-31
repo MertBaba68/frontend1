@@ -4,10 +4,16 @@ import "/src/styles/ServicePage.css";
 import AboutSection from "@/app/view/components/AboutSection";
 import Card from "@/app/view/components/static/Card";
 import ContactFormController from "@/app/controller-layer/ContactFormController";
+import BreadCrumbs from "./Breadcrumbs";
 
 const ServicePage = ({ serviceData }) => {
     return (
         <>
+            <BreadCrumbs links={[
+                {url:"/categories/"+serviceData.categoryName,name:serviceData.categoryName},
+                {url:"/service/"+serviceData.id,name:serviceData.name}
+            ]}></BreadCrumbs>
+            
             <div
                 className="background-image-container"
                 style={{

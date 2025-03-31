@@ -37,4 +37,4 @@ export const InputField = ({ type, id, label, name, value, onChange, typeOfInput
             )}
         </div>
     )
-}
+} 

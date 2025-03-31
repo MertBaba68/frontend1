@@ -5,6 +5,8 @@ import Page from "@/app/view/components/static/Page";
 import PageContainer from "@/app/view/components/static/PageContainer";
 import {ActionBarController} from "@/app/controller-layer/ActionBarController";
 import {CustomFilterController} from "@/app/controller-layer/CustomFilterController";
+import BreadCrumbs from "./Breadcrumbs";
+
 
 const ServicesPage = ({
     categoryData,
@@ -15,31 +17,34 @@ const ServicesPage = ({
 }) => {
 
     return (
-        <Page>
-            <div className="service-page-header-to-be-made" >
-                {/*Header to be expected*/}
-            </div>
+     <>
+        <BreadCrumbs links={[{url:"/categories/"+categoryData.name,name:categoryData.name}]}></BreadCrumbs>
+            <Page>
+                <div className="service-page-header-to-be-made" >
+                    {/*Header to be expected*/}
+                </div>
 
-            <PageContainer>
-                <ActionBarController title={categoryData.name} onSearch={onSearch} />
-            </PageContainer>
+                <PageContainer>
+                    <ActionBarController title={categoryData.name} onSearch={onSearch} />
+                </PageContainer>
 
-            <PageContainer>
-                <CustomFilterController onFilterChange={onFilterChange} />
-            </PageContainer>
+                <PageContainer>
+                    <CustomFilterController onFilterChange={onFilterChange} />
+                </PageContainer>
 
-            <PageContainer>
-                <Services
-                    servicesCategory={categoryData}
-                    isSearching={isSearching}
-                    servicesError={servicesError}
-                />
-            </PageContainer>
+                <PageContainer>
+                    <Services
+                        servicesCategory={categoryData}
+                        isSearching={isSearching}
+                        servicesError={servicesError}
+                    />
+                </PageContainer>
 
-            <PageContainer>
-                <ContactFormController page="Servicepage" />
-            </PageContainer>
-        </Page>
+                    <PageContainer>
+                        <ContactFormController page="Servicepage" />
+                    </PageContainer>
+            </Page>
+    </>
     );
 };
 
