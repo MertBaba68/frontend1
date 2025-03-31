@@ -1,13 +1,13 @@
 import {CustomFilter} from "@/app/view/components/CustomFilter";
 import {useEffect, useState} from "react";
-import {getFilterValues} from "@/app/service-layer/FilterService";
+import {getFilterOptions} from "@/app/service-layer/FilterService";
 
 export const CustomFilterController = ({ onFilterChange }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isFetching, setIsFetching] = useState(false);
     const [error, setError] = useState(null);
 
-    const [filterValues, setFilterValues] = useState(null);
+    const [filterOptions, setFilterOptions] = useState(null);
     const [filterData, setFilterData] = useState(null);
 
     const handleClick = () => {
@@ -15,7 +15,7 @@ export const CustomFilterController = ({ onFilterChange }) => {
     }
 
     const handleSelect = (selectedOptionData) => {
-        let newFilterValues = { ...filterValues };
+        let newFilterValues = { ...filterOptions };
         const title = selectedOptionData.title;
         const option = selectedOptionData.option;
 
@@ -30,57 +30,36 @@ export const CustomFilterController = ({ onFilterChange }) => {
             }
         }
 
-        setFilterValues(newFilterValues);
+        setFilterOptions(newFilterValues);
         onFilterChange(newFilterValues);
     };
 
-    // TODO: Use this instead of placeholder function when backend is ready
-    // useEffect(() => {
-    //     const fetchFilterValues = async () => {
-    //         setIsFetching(true);
-    //         setError(null)
-    //
-    //         try {
-    //             const data = await getFilterValues();
-    //             setFilterValues(data);
-    //         } catch (error) {
-    //             setError(error);
-    //         } finally {
-    //             setIsFetching(false);
-    //         }
-    //     }
-    // },[])
-
-    const fetchFilterValues = () => {
-        return [
-            { title: "Rol", options: ["IT manager", "CEO", "CFO"] },
-            { title: "Type oplossing", options: ["Hardware", "Software", "IoT"] },
-            { title: "Techniek", options: ["Sensoren", "Connectiviteit", "Software", "Data", "AI"] },
-            { title: "Bedrijfsgrootte", options: ["Small", "Large", "MKB", "SOHO"] },
-            { title: "Probleem", options: ["Kosten verlagen", "Opbrengsten verhogen", "Klanten ervaring verbeteren"] },
-            { title: "Waarde", options: ["Geld", "Duurzaamheid", "Risico verlagen", "Compliance"] }
-        ]
-    }
-
-    const initialValuesBody = () => {
-        return filterData.reduce((acc, item) => {
-            acc[item.title] = { selectedValues: [] }
-            return acc;
-        }, {})
-    }
-
     useEffect(() => {
-        const data = fetchFilterValues();
-        setFilterData(data);
-    }, []);
+        const fetchFilterValues = async () => {
+            setIsFetching(true);
+            setError(null)
 
-    useEffect(() => {
-        if (filterData) {
-            setFilterValues(initialValuesBody());
+            try {
+                const data = await getFilterOptions();
+                setFilterData(data)
+
+                const initialFilterOptions = await data.reduce((acc, item) => {
+                    console.log(item.options)
+                    acc[item.title] = { selectedValues: [] }
+                    return acc
+                }, {})
+                setFilterOptions(initialFilterOptions);
+            } catch (error) {
+                setError(error);
+            } finally {
+                setIsFetching(false);
+            }
         }
-    }, [filterData]);
+        fetchFilterValues()
+    },[])
 
-    return(
+   if (filterOptions) return(
+
         <CustomFilter
             onClick={handleClick}
             isOpen={isOpen}
